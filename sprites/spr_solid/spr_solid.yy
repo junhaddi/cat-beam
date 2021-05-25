@@ -8,14 +8,14 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 0,
-  "bbox_right": 152,
+  "bbox_right": 63,
   "bbox_top": 0,
-  "bbox_bottom": 140,
+  "bbox_bottom": 63,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 153,
-  "height": 141,
+  "width": 64,
+  "height": 64,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"c60e0a97-5d22-43c6-840f-94215cdca17a","path":"sprites/spr_flowerpot/spr_flowerpot.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"c60e0a97-5d22-43c6-840f-94215cdca17a","path":"sprites/spr_flowerpot/spr_flowerpot.yy",},"LayerId":{"name":"a03913ba-3fe6-4df7-9290-0a1603fb6914","path":"sprites/spr_flowerpot/spr_flowerpot.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_flowerpot","path":"sprites/spr_flowerpot/spr_flowerpot.yy",},"resourceVersion":"1.0","name":"c60e0a97-5d22-43c6-840f-94215cdca17a","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"69df3c8e-1d6a-4ad5-9f01-15cbb33868f2","path":"sprites/spr_solid/spr_solid.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"69df3c8e-1d6a-4ad5-9f01-15cbb33868f2","path":"sprites/spr_solid/spr_solid.yy",},"LayerId":{"name":"5001078c-cbe6-48b6-8308-c7291addbfe7","path":"sprites/spr_solid/spr_solid.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_solid","path":"sprites/spr_solid/spr_solid.yy",},"resourceVersion":"1.0","name":"69df3c8e-1d6a-4ad5-9f01-15cbb33868f2","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_flowerpot","path":"sprites/spr_flowerpot/spr_flowerpot.yy",},
+    "spriteId": {"name":"spr_solid","path":"sprites/spr_solid/spr_solid.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"6bc7c9bf-6a22-4218-83c6-22627ffca7dd","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c60e0a97-5d22-43c6-840f-94215cdca17a","path":"sprites/spr_flowerpot/spr_flowerpot.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"30ffe155-f9ed-4d84-8efe-6549d6de975a","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"69df3c8e-1d6a-4ad5-9f01-15cbb33868f2","path":"sprites/spr_solid/spr_solid.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,14 +58,14 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_flowerpot","path":"sprites/spr_flowerpot/spr_flowerpot.yy",},
+    "parent": {"name":"spr_solid","path":"sprites/spr_solid/spr_solid.yy",},
     "resourceVersion": "1.3",
-    "name": "spr_flowerpot",
+    "name": "spr_solid",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"a03913ba-3fe6-4df7-9290-0a1603fb6914","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"5001078c-cbe6-48b6-8308-c7291addbfe7","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
@@ -73,7 +73,7 @@
     "path": "folders/Sprites/Props.yy",
   },
   "resourceVersion": "1.0",
-  "name": "spr_flowerpot",
+  "name": "spr_solid",
   "tags": [],
   "resourceType": "GMSprite",
 }

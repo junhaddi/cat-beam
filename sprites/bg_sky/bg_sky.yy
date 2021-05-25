@@ -10,12 +10,12 @@
   "bbox_left": 0,
   "bbox_right": 1279,
   "bbox_top": 0,
-  "bbox_bottom": 113,
+  "bbox_bottom": 719,
   "HTile": false,
   "VTile": false,
   "For3D": false,
   "width": 1280,
-  "height": 114,
+  "height": 720,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"dcdb330b-8e37-418b-9596-7762e6913c21","path":"sprites/spr_ground/spr_ground.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"dcdb330b-8e37-418b-9596-7762e6913c21","path":"sprites/spr_ground/spr_ground.yy",},"LayerId":{"name":"364ea0ff-929f-4337-83f7-2399c5142db8","path":"sprites/spr_ground/spr_ground.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_ground","path":"sprites/spr_ground/spr_ground.yy",},"resourceVersion":"1.0","name":"dcdb330b-8e37-418b-9596-7762e6913c21","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"9f337a94-2f79-459b-8d03-13aa9478a2b6","path":"sprites/bg_sky/bg_sky.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"9f337a94-2f79-459b-8d03-13aa9478a2b6","path":"sprites/bg_sky/bg_sky.yy",},"LayerId":{"name":"af43610d-c583-4f1c-9a4f-f6b94f81f8e9","path":"sprites/bg_sky/bg_sky.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"bg_sky","path":"sprites/bg_sky/bg_sky.yy",},"resourceVersion":"1.0","name":"9f337a94-2f79-459b-8d03-13aa9478a2b6","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_ground","path":"sprites/spr_ground/spr_ground.yy",},
+    "spriteId": {"name":"bg_sky","path":"sprites/bg_sky/bg_sky.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"2c9dc518-0d16-4699-9dc0-caafd3b5b026","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"dcdb330b-8e37-418b-9596-7762e6913c21","path":"sprites/spr_ground/spr_ground.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"28058625-bc73-4dd9-a84a-640076a2c0c8","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"9f337a94-2f79-459b-8d03-13aa9478a2b6","path":"sprites/bg_sky/bg_sky.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,22 +58,22 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_ground","path":"sprites/spr_ground/spr_ground.yy",},
+    "parent": {"name":"bg_sky","path":"sprites/bg_sky/bg_sky.yy",},
     "resourceVersion": "1.3",
-    "name": "spr_ground",
+    "name": "bg_sky",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"364ea0ff-929f-4337-83f7-2399c5142db8","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"af43610d-c583-4f1c-9a4f-f6b94f81f8e9","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Backgrounds",
+    "path": "folders/Sprites/Backgrounds.yy",
   },
   "resourceVersion": "1.0",
-  "name": "spr_ground",
+  "name": "bg_sky",
   "tags": [],
   "resourceType": "GMSprite",
 }
