@@ -1,18 +1,20 @@
 function scr_player() {
 	// 입력 관리
-	var key_jump = keyboard_check(vk_up);
-	var key_beam = keyboard_check(vk_down);
+	var key_jump = keyboard_check_pressed(vk_up);
+	var key_beam = keyboard_check_pressed(vk_down);
 	
 	vspd += grav;
 	
 	// 점프
-	if (key_jump && place_meeting(x, y + 1, obj_solid)) {
+	if (key_jump && jumpCount > 0 && (jumpCount == jumpCountMax ? place_meeting(x, y + 1, obj_solid) : true)) {
 		vspd = jumpPower;
+		jumpCount--;
 	}
 	
 	// 레이저 비비ㅣㅣ비ㅣ비ㅇ비비이이ㅣㅣㅣㅣㅣㅣ이밈ㅁ!!
 	if (key_beam) {
-	
+		isBeam = true;
+		obj_beam.scaleY = 1;
 	}
 	
 	// 물리엔진
@@ -21,6 +23,7 @@ function scr_player() {
 			y += sign(vspd);
 		}
 		vspd = 0;
+		jumpCount = jumpCountMax;
 	}
 	y += vspd;
 }
