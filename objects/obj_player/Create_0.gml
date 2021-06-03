@@ -12,6 +12,9 @@ jumpCount = jumpCountMax;
 
 // 공격
 isBeam = false;
+beamRange = GAME_WIDTH - 400;
+beamThicknessMax = 24;
+beamThickness = 0;
 
 // 피격
 isDamaged = false;

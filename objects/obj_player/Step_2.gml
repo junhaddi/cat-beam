@@ -1,1 +1,0 @@
-isBeam = false;
