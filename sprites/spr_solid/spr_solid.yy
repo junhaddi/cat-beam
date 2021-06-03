@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Props",
-    "path": "folders/Sprites/Props.yy",
+    "name": "999_ETC",
+    "path": "folders/Sprites/999_ETC.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_solid",

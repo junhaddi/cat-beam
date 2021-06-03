@@ -14,7 +14,6 @@ function scr_player() {
 	// 레이저 비비ㅣㅣ비ㅣ비ㅇ비비이이ㅣㅣㅣㅣㅣㅣ이밈ㅁ!!
 	if (key_beam) {
 		isBeam = true;
-		obj_beam.scaleY = 1;
 	}
 	
 	// 물리엔진

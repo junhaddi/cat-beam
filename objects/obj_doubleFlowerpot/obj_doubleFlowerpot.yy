@@ -1,13 +1,16 @@
 {
   "spriteId": {
-    "name": "spr_solid",
-    "path": "sprites/spr_solid/spr_solid.yy",
+    "name": "spr_doubleFlowerpot",
+    "path": "sprites/spr_doubleFlowerpot/spr_doubleFlowerpot.yy",
   },
   "solid": false,
-  "visible": false,
+  "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "par_block",
+    "path": "objects/par_block/par_block.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -24,11 +27,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "999_ETC",
-    "path": "folders/Objects/999_ETC.yy",
+    "name": "02_Blocks",
+    "path": "folders/Objects/200_props/02_Blocks.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_solid",
+  "name": "obj_doubleFlowerpot",
   "tags": [],
   "resourceType": "GMObject",
 }

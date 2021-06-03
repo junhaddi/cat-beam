@@ -1,10 +1,7 @@
 {
-  "spriteId": {
-    "name": "spr_solid",
-    "path": "sprites/spr_solid/spr_solid.yy",
-  },
+  "spriteId": null,
   "solid": false,
-  "visible": false,
+  "visible": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": null,
@@ -24,11 +21,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "999_ETC",
-    "path": "folders/Objects/999_ETC.yy",
+    "name": "200_props",
+    "path": "folders/Objects/200_props.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_solid",
+  "name": "par_prop",
   "tags": [],
   "resourceType": "GMObject",
 }

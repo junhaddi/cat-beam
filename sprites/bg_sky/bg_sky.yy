@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Backgrounds",
-    "path": "folders/Sprites/Backgrounds.yy",
+    "name": "300_Backgrounds",
+    "path": "folders/Sprites/300_Backgrounds.yy",
   },
   "resourceVersion": "1.0",
   "name": "bg_sky",

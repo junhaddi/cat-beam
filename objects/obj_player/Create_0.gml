@@ -1,10 +1,18 @@
+enum Player {
+	Damaged,
+}
+
+// 이동
 vspd = 0;
-grav = 0.4;
-jumpPower = -12
+grav = 1;
+jumpPower = -18
 
 jumpCountMax = 2;
 jumpCount = jumpCountMax;
 
+// 공격
 isBeam = false;
 
-instance_create_layer(0, 0, "layer_inst", obj_beam);
+// 피격
+isDamaged = false;
+damagedTimeMax = room_speed * 1;
