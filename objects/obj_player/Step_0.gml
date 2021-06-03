@@ -5,5 +5,3 @@ if (isBeam) {
 } else {
 	beamThickness = scr_ease(beamThickness, 0, hspeed);
 }
-
-show_debug_message(beamThickness);
