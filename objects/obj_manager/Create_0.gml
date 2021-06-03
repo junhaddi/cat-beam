@@ -7,13 +7,13 @@ global.hpMax = 100;
 global.hp = global.hpMax;
 global.defense = 0;
 
-enum Event {
+enum ManagerAlarm {
 	enemy,
 	block,
 	item,
 };
 
-enum EventGenTime {
+enum ManagerEventTime {
 	enemy = 180,
 	block = 240,
 	item = 660,
@@ -23,6 +23,6 @@ enum EventGenTime {
 var hpbarSpriteWidth = sprite_get_width(spr_hpbar);
 hpbarWidth = hpbarSpriteWidth * (global.hp / global.hpMax);
 
-//alarm[Event.enemy] = EventGenTime.enemy * global.gameSpeed;
-alarm[Event.block] = EventGenTime.block * global.gameSpeed;
-//alarm[Event.item] = EventGenTime.item * global.gameSpeed;
+//alarm[ManagerAlarm.enemy] = ManagerEventTime.enemy * global.gameSpeed;
+alarm[ManagerAlarm.block] = ManagerEventTime.block * global.gameSpeed;
+alarm[ManagerAlarm.item] = ManagerEventTime.item * global.gameSpeed;

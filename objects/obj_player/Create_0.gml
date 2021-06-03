@@ -1,6 +1,8 @@
-enum Player {
+enum PlayerAlarm {
 	Damaged,
 }
+
+isDead = false;
 
 // 이동
 vspd = 0;
