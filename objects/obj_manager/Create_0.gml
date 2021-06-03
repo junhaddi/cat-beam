@@ -1,8 +1,3 @@
-#macro GAME_WIDTH 1280
-#macro GAME_HEIGHT 720
-#macro GAME_CENTER 640
-#macro GAME_MIDDLE 360
-
 global.gameScore = 0;
 global.gameSpeed = 1;
 global.stringBallCount = 0;

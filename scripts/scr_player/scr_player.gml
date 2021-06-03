@@ -13,6 +13,9 @@ function scr_player() {
 	
 	// 레이저 비비ㅣㅣ비ㅣ비ㅇ비비이이ㅣㅣㅣㅣㅣㅣ이밈ㅁ!!
 	isBeam = key_beam;
+	if (keyboard_check_pressed(vk_down)) {
+		beamThickness = beamThicknessMax;
+	}
 	
 	// 물리엔진
 	if (place_meeting(x, y + vspd, obj_solid)) {

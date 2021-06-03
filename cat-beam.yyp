@@ -8,6 +8,7 @@
     {"id":{"name":"scr_init","path":"scripts/scr_init/scr_init.yy",},"order":0,},
     {"id":{"name":"scr_player","path":"scripts/scr_player/scr_player.yy",},"order":0,},
     {"id":{"name":"spr_doubleFlowerpot","path":"sprites/spr_doubleFlowerpot/spr_doubleFlowerpot.yy",},"order":0,},
+    {"id":{"name":"obj_pause","path":"objects/obj_pause/obj_pause.yy",},"order":2,},
     {"id":{"name":"spr_hpbar","path":"sprites/spr_hpbar/spr_hpbar.yy",},"order":1,},
     {"id":{"name":"obj_manager","path":"objects/obj_manager/obj_manager.yy",},"order":0,},
     {"id":{"name":"spr_human","path":"sprites/spr_human/spr_human.yy",},"order":0,},
