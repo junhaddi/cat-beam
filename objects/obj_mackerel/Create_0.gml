@@ -5,9 +5,9 @@ image_xscale = imageScale;
 image_yscale = imageScale;
 
 if (irandom(4) == 0) {
-	isRaw = true;
+	isGrilled = true;
 	image_index = 1;
 } else {
-	isRaw = false;
+	isGrilled = false;
 	image_index = 0;
 }

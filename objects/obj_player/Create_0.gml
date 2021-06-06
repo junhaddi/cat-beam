@@ -14,7 +14,10 @@ jumpCount = jumpCountMax;
 
 // 공격
 isBeam = false;
-beamRange = GAME_WIDTH - 400;
+beamOffsetX = 30;
+beamOffsetY = 12;
+beamRangeMax = GAME_WIDTH - 400;
+beamRange = beamRangeMax;
 beamThicknessMax = 24;
 beamThickness = 0;
 

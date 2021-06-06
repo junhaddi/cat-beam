@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"6daa8006-bf2f-4a4f-b4ba-af0b3c3a5b2f","path":"sprites/spr_human/spr_human.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"6daa8006-bf2f-4a4f-b4ba-af0b3c3a5b2f","path":"sprites/spr_human/spr_human.yy",},"LayerId":{"name":"9162683c-473e-4ab2-8a6a-1255fc8801c1","path":"sprites/spr_human/spr_human.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_human","path":"sprites/spr_human/spr_human.yy",},"resourceVersion":"1.0","name":"6daa8006-bf2f-4a4f-b4ba-af0b3c3a5b2f","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"6daa8006-bf2f-4a4f-b4ba-af0b3c3a5b2f","path":"sprites/spr_woman/spr_woman.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"6daa8006-bf2f-4a4f-b4ba-af0b3c3a5b2f","path":"sprites/spr_woman/spr_woman.yy",},"LayerId":{"name":"9162683c-473e-4ab2-8a6a-1255fc8801c1","path":"sprites/spr_woman/spr_woman.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_woman","path":"sprites/spr_woman/spr_woman.yy",},"resourceVersion":"1.0","name":"6daa8006-bf2f-4a4f-b4ba-af0b3c3a5b2f","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_human","path":"sprites/spr_human/spr_human.yy",},
+    "spriteId": {"name":"spr_woman","path":"sprites/spr_woman/spr_woman.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"c76a5067-4d1a-4e88-b4ca-cefe837dbbf0","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"6daa8006-bf2f-4a4f-b4ba-af0b3c3a5b2f","path":"sprites/spr_human/spr_human.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"ab5ba748-2c19-4cd6-8cc9-dc6b89cf87a8","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"6daa8006-bf2f-4a4f-b4ba-af0b3c3a5b2f","path":"sprites/spr_woman/spr_woman.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,9 +58,9 @@
     "yorigin": 226,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_human","path":"sprites/spr_human/spr_human.yy",},
+    "parent": {"name":"spr_woman","path":"sprites/spr_woman/spr_woman.yy",},
     "resourceVersion": "1.3",
-    "name": "spr_human",
+    "name": "spr_woman",
     "tags": [],
     "resourceType": "GMSequence",
   },
@@ -73,7 +73,7 @@
     "path": "folders/Sprites/200_Props/01_Enemys.yy",
   },
   "resourceVersion": "1.0",
-  "name": "spr_human",
+  "name": "spr_woman",
   "tags": [],
   "resourceType": "GMSprite",
 }

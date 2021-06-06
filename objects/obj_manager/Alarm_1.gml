@@ -1,4 +1,5 @@
 /// @description 블록 생성
+
 var block;
 if (irandom(4) == 0) {
 	block = obj_doubleFlowerpot;

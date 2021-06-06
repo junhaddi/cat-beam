@@ -1,4 +1,5 @@
 /// @description 아이템 생성
+
 var item;
 switch (irandom(10)) {
 	case 0:

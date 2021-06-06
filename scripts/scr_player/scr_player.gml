@@ -15,9 +15,24 @@ function scr_player() {
 		jumpCount--;
 	}
 	
-	// 고양이 비비ㅣㅣ비ㅣ비ㅇ비비이이ㅣㅣㅣㅣㅣㅣ이밈ㅁ!!
 	if (!isDead) {
+		// 고양이 비비ㅣㅣ비ㅣ비ㅇ비비이이ㅣㅣㅣㅣㅣㅣ이밈ㅁ!!
 		isBeam = key_beam;
+		
+		// 빔 길이 설정
+		if (isBeam) {
+			if (instance_number(par_enemy) > 0) {
+				if (collision_line(x + beamOffsetX, y + beamOffsetY, x + beamOffsetX + beamRangeMax, y + beamOffsetY, par_enemy, false, false) == noone) {
+					beamRange = beamRangeMax;
+				} else {
+					while (collision_line(x + beamOffsetX, y + beamOffsetY, x + beamOffsetX + beamRange, y + beamOffsetY, par_enemy, false, false) != noone && beamRange > 1) {
+						beamRange--;
+					}
+				}
+			}
+		}
+		
+		// 순간적인 빔 두께 설정
 		if (keyboard_check_pressed(vk_down)) {
 			beamThickness = beamThicknessMax;
 		}

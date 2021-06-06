@@ -14,15 +14,15 @@ enum ManagerAlarm {
 };
 
 enum ManagerEventTime {
-	enemy = 180,
-	block = 240,
-	item = 660,
+	enemy = 160,
+	block = 280,
+	item = 420,
 };
 
 // Draw
 var hpbarSpriteWidth = sprite_get_width(spr_hpbar);
 hpbarWidth = hpbarSpriteWidth * (global.hp / global.hpMax);
 
-//alarm[ManagerAlarm.enemy] = ManagerEventTime.enemy * global.gameSpeed;
+alarm[ManagerAlarm.enemy] = ManagerEventTime.enemy * global.gameSpeed;
 alarm[ManagerAlarm.block] = ManagerEventTime.block * global.gameSpeed;
 alarm[ManagerAlarm.item] = ManagerEventTime.item * global.gameSpeed;
