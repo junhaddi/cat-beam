@@ -22,4 +22,4 @@ switch (irandom(10)) {
 }
 instance_create_layer(GAME_WIDTH, GAME_HEIGHT - 100, "layer_item", item);
 
-alarm[ManagerAlarm.item] = ManagerEventTime.item * global.gameSpeed;
+alarm[ManagerAlarm.Item] = ManagerEventTime.Item * global.gameSpeed;

@@ -73,8 +73,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "400_UI",
-    "path": "folders/Sprites/400_UI.yy",
+    "name": "300_UI",
+    "path": "folders/Sprites/300_UI.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_hpbar",

@@ -1,11 +1,10 @@
 scr_player();
 
-if (global.hp < 1) {
+if (global.hp < 1 && !isDead) {
 	// 죽을 때 폴짝 뜀
-	if (!isDead) {
-		vspd = jumpPower;
-	}
+	vspd = jumpPower;
 	isDead = true;
+	isDamaged = false;
 }
 
 if (isBeam) {

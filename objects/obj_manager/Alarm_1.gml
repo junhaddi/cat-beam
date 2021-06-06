@@ -8,4 +8,4 @@ if (irandom(4) == 0) {
 }
 instance_create_layer(GAME_WIDTH, GAME_HEIGHT - 100, "layer_block", block);
 
-alarm[ManagerAlarm.block] = ManagerEventTime.block * global.gameSpeed;
+alarm[ManagerAlarm.Block] = ManagerEventTime.Block * global.gameSpeed;

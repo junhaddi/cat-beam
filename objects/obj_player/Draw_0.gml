@@ -1,5 +1,5 @@
-// 플레이어
 if (!isDead) {
+	// 플레이어
 	var _w = random_range(0.8, 1.2);
 	var _h = random_range(0.8, 1.2);
 	draw_sprite_ext(sprite_index, image_index, x, y, _w, _h, image_angle, image_blend, isDamaged ? 0.5 : 1);
@@ -11,5 +11,6 @@ if (!isDead) {
 		draw_set_color(c_white);
 	}
 } else {
+	// 플레이어 사망
 	draw_sprite_ext(sprite_index, image_index, x, y, 1, -1, image_angle, image_blend, image_alpha);
 }

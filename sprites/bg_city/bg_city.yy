@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "300_Backgrounds",
-    "path": "folders/Sprites/300_Backgrounds.yy",
+    "name": "400_Backgrounds",
+    "path": "folders/Sprites/400_Backgrounds.yy",
   },
   "resourceVersion": "1.0",
   "name": "bg_city",
