@@ -64,5 +64,7 @@ function scr_init() {
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top)
 	
+	audio_play_sound(bgm_game1, 10, true);
+	
 	room_goto_next();
 }

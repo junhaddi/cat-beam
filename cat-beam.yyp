@@ -1,5 +1,6 @@
 {
   "resources": [
+    {"id":{"name":"bgm_game1","path":"sounds/bgm_game1/bgm_game1.yy",},"order":0,},
     {"id":{"name":"obj_doubleFlowerpot","path":"objects/obj_doubleFlowerpot/obj_doubleFlowerpot.yy",},"order":0,},
     {"id":{"name":"spr_player1","path":"sprites/spr_player1/spr_player1.yy",},"order":0,},
     {"id":{"name":"obj_ciao","path":"objects/obj_ciao/obj_ciao.yy",},"order":1,},
@@ -100,6 +101,8 @@
     {"folderPath":"folders/Scripts/000_Manager.yy","order":4,"resourceVersion":"1.0","name":"000_Manager","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/300_UI.yy","order":3,"resourceVersion":"1.0","name":"300_UI","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/200_props.yy","order":5,"resourceVersion":"1.0","name":"200_props","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sounds/000_BGM.yy","order":1,"resourceVersion":"1.0","name":"000_BGM","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sounds/100_SFX.yy","order":2,"resourceVersion":"1.0","name":"100_SFX","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
