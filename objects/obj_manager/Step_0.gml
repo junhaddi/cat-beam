@@ -49,6 +49,14 @@ switch (global.gameState) {
 			alarm[ManagerAlarm.Enemy] = 0;
 			alarm[ManagerAlarm.Block] = 0;
 			alarm[ManagerAlarm.Item] = 0;
+			
+			// 신기록 달성
+			if (global.gameScore > global.gameHighScore) {
+				global.gameHighScore = global.gameScore;
+				global.saveMap[? "highScore"] = global.gameHighScore;
+				scr_save(SAVE_FILE);
+			}
+			
 			global.gameState = GameState.GameOver;
 		}
 		#endregion

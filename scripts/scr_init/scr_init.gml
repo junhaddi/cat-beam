@@ -1,4 +1,5 @@
 function scr_init() {
+	#macro SAVE_FILE "data.sav"
 	#macro GAME_FPS 60
 	#macro GAME_WIDTH 1280
 	#macro GAME_HEIGHT 720
@@ -27,6 +28,13 @@ function scr_init() {
 		Block = 280,
 		Item = 420,
 	};
+
+	// 세이브파일 불러오기
+	global.gameHighScore = 0;
+	global.saveMap = ds_map_create();
+	if (file_exists(SAVE_FILE)) {
+		scr_load(SAVE_FILE);
+	}
 
 	// 플레이어별 정보 입력
 	var player1 = ds_map_create();

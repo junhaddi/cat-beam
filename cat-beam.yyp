@@ -6,6 +6,7 @@
     {"id":{"name":"obj_ciao","path":"objects/obj_ciao/obj_ciao.yy",},"order":1,},
     {"id":{"name":"obj_man","path":"objects/obj_man/obj_man.yy",},"order":1,},
     {"id":{"name":"spr_solid","path":"sprites/spr_solid/spr_solid.yy",},"order":0,},
+    {"id":{"name":"scr_load","path":"scripts/scr_load/scr_load.yy",},"order":2,},
     {"id":{"name":"par_item","path":"objects/par_item/par_item.yy",},"order":0,},
     {"id":{"name":"obj_woman","path":"objects/obj_woman/obj_woman.yy",},"order":2,},
     {"id":{"name":"scr_playerDamaged","path":"scripts/scr_playerDamaged/scr_playerDamaged.yy",},"order":1,},
@@ -43,6 +44,7 @@
     {"id":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"order":1,},
     {"id":{"name":"spr_flowerpot","path":"sprites/spr_flowerpot/spr_flowerpot.yy",},"order":1,},
     {"id":{"name":"par_prop","path":"objects/par_prop/par_prop.yy",},"order":2,},
+    {"id":{"name":"scr_save","path":"scripts/scr_save/scr_save.yy",},"order":1,},
     {"id":{"name":"rm_game","path":"rooms/rm_game/rm_game.yy",},"order":0,},
   ],
   "Options": [
