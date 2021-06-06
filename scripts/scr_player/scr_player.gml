@@ -21,12 +21,27 @@ function scr_player() {
 		// 고양이 비비ㅣㅣ비ㅣ비ㅇ비비이이ㅣㅣㅣㅣㅣㅣ이밈ㅁ!!
 		isBeam = key_beam;
 		
-		// 빔 길이 설정
 		if (isBeam) {
 			beamRange = global.beamRangeMax;
 			if (instance_number(par_enemy) > 0) {
-				while (collision_line(x + beamOffsetX, y + beamOffsetY, x + beamOffsetX + beamRange, y + beamOffsetY, par_enemy, false, false) != noone && beamRange > 1) {
-					beamRange--;
+				// 적 공격
+				var enemys = ds_list_create();
+				if (collision_line_list(x + beamOffsetX, y + beamOffsetY, x + beamOffsetX + beamRange, y + beamOffsetY, par_enemy, false, false, enemys, false) != noone) {
+					if (isBeamStraight) {
+						for (var i = 0; i < ds_list_size(enemys); i++) {
+							scr_enemyDamaged(enemys, i);
+						}
+					} else if (enemys[| 0] != undefined) {
+						scr_enemyDamaged(enemys, 0);
+					}
+				}
+				ds_list_destroy(enemys);
+				
+				// 빔 길이 설정
+				if (!isBeamStraight) {
+					while (collision_line(x + beamOffsetX, y + beamOffsetY, x + beamOffsetX + beamRange, y + beamOffsetY, par_enemy, false, false) != noone && beamRange > 1) {
+						beamRange--;
+					}
 				}
 			}
 		}

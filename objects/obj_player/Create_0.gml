@@ -11,6 +11,7 @@ jumpCount = jumpCountMax;
 
 // 공격
 isBeam = false;
+isBeamStraight = false;
 beamOffsetX = 30;
 beamOffsetY = 12;
 beamRange = 0;

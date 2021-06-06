@@ -7,6 +7,7 @@
     {"id":{"name":"spr_solid","path":"sprites/spr_solid/spr_solid.yy",},"order":0,},
     {"id":{"name":"par_item","path":"objects/par_item/par_item.yy",},"order":0,},
     {"id":{"name":"obj_woman","path":"objects/obj_woman/obj_woman.yy",},"order":2,},
+    {"id":{"name":"scr_playerDamaged","path":"scripts/scr_playerDamaged/scr_playerDamaged.yy",},"order":1,},
     {"id":{"name":"scr_init","path":"scripts/scr_init/scr_init.yy",},"order":0,},
     {"id":{"name":"scr_player","path":"scripts/scr_player/scr_player.yy",},"order":0,},
     {"id":{"name":"spr_doubleFlowerpot","path":"sprites/spr_doubleFlowerpot/spr_doubleFlowerpot.yy",},"order":0,},
@@ -37,6 +38,7 @@
     {"id":{"name":"spr_player3","path":"sprites/spr_player3/spr_player3.yy",},"order":2,},
     {"id":{"name":"spr_ciao","path":"sprites/spr_ciao/spr_ciao.yy",},"order":0,},
     {"id":{"name":"bg_ground","path":"sprites/bg_ground/bg_ground.yy",},"order":1,},
+    {"id":{"name":"scr_enemyDamaged","path":"scripts/scr_enemyDamaged/scr_enemyDamaged.yy",},"order":0,},
     {"id":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"order":1,},
     {"id":{"name":"spr_flowerpot","path":"sprites/spr_flowerpot/spr_flowerpot.yy",},"order":1,},
     {"id":{"name":"par_prop","path":"objects/par_prop/par_prop.yy",},"order":2,},
@@ -97,6 +99,7 @@
     {"folderPath":"folders/Sprites/999_ETC.yy","order":12,"resourceVersion":"1.0","name":"999_ETC","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/000_Manager.yy","order":4,"resourceVersion":"1.0","name":"000_Manager","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/300_UI.yy","order":3,"resourceVersion":"1.0","name":"300_UI","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Scripts/200_props.yy","order":5,"resourceVersion":"1.0","name":"200_props","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},

@@ -15,7 +15,7 @@ switch (global.gameState) {
 		#region InGame
 		global.hp -= 1 / GAME_FPS;
 		
-		if (global.hp > 0) {
+		if (global.hp >= 1) {
 			global.gameScore += 1;
 			
 			// Parallax 배경 속도설정
