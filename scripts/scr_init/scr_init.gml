@@ -40,15 +40,15 @@ function scr_init() {
 	player2[? "hpMax"] = 80;
 	player2[? "defence"] = 0;
 	player2[? "speed"] = 1.2;
-	player2[? "beamDamage"] = 2;
-	player2[? "beamRangeMax"] = GAME_WIDTH - 600;
+	player2[? "beamDamage"] = 1.2;
+	player2[? "beamRangeMax"] = GAME_WIDTH - 500;
 
 	var player3 = ds_map_create();
-	player3[? "hpMax"] = 100;
+	player3[? "hpMax"] = 120;
 	player3[? "defence"] = 1;
 	player3[? "speed"] = 0.8;
 	player3[? "beamDamage"] = 1;
-	player3[? "beamRangeMax"] = GAME_WIDTH - 500;
+	player3[? "beamRangeMax"] = GAME_WIDTH - 600;
 
 	// 플레이어 정보 구조체화
 	global.playersStatus = ds_list_create();

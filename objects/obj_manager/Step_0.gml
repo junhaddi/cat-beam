@@ -1,6 +1,10 @@
 switch (global.gameState) {
 	case GameState.Menu:
 		#region Menu
+		// Parallax 배경 속도설정
+		layer_hspeed ( "bg_ground", groundSpeed);
+		layer_hspeed ( "bg_city", citySpeed);
+		layer_hspeed ( "bg_sky", skySpeed);
 		#endregion
 		break;
 	case GameState.Tutorial:
@@ -9,22 +13,44 @@ switch (global.gameState) {
 		break;
 	case GameState.InGame:
 		#region InGame
-		// TODO 점수 공식 필요
-		global.gameScore += 1;
+		global.hp -= 1 / GAME_FPS;
+		
+		if (global.hp > 0) {
+			global.gameScore += 1;
+			
+			// Parallax 배경 속도설정
+			layer_hspeed ( "bg_ground", groundSpeed * global.gameSpeed);
+			layer_hspeed ( "bg_city", citySpeed * global.gameSpeed);
+			layer_hspeed ( "bg_sky", skySpeed * global.gameSpeed);
 
-		// TODO 방어력 공식
-		global.hp -= (1 / GAME_FPS);
+			// 게임 일시정지
+			if (keyboard_check_pressed(vk_escape)) {
+				layer_hspeed ( "bg_ground", 0);
+				layer_hspeed ( "bg_city", 0);
+				layer_hspeed ( "bg_sky", 0);
+				instance_create_layer(0, 0, "layer_inst", obj_pause);
+			}
 
-		// 게임 일시정지
-		if (keyboard_check_pressed(vk_escape)) {
-			layer_hspeed ( "bg_ground", 0);
-			layer_hspeed ( "bg_city", 0);
-			layer_hspeed ( "bg_sky", 0);
-			instance_create_layer(0, 0, "layer_inst", obj_pause);
+			// 이벤트 발생
+			if (alarm[ManagerAlarm.Enemy] == -1) {
+				alarm[ManagerAlarm.Enemy] = ManagerEventTime.Enemy * global.gameSpeed;
+			}
+			if (alarm[ManagerAlarm.Block] == -1) {
+				alarm[ManagerAlarm.Block] = ManagerEventTime.Block * global.gameSpeed;
+			}
+			if (alarm[ManagerAlarm.Item] == -1) {
+				alarm[ManagerAlarm.Item] = ManagerEventTime.Item * global.gameSpeed;
+			}
+
+			// Draw
+			hpbarWidth = scr_ease(hpbarWidth, hpbarSpriteWidth * (global.hp / global.hpMax));
+		} else {
+			// 플레이어 사망
+			alarm[ManagerAlarm.Enemy] = 0;
+			alarm[ManagerAlarm.Block] = 0;
+			alarm[ManagerAlarm.Item] = 0;
+			global.gameState = GameState.GameOver;
 		}
-
-		// Draw
-		hpbarWidth = scr_ease(hpbarWidth, hpbarSpriteWidth * (global.hp / global.hpMax));
 		#endregion
 		break;
 	case GameState.GameOver:
@@ -32,11 +58,6 @@ switch (global.gameState) {
 		#endregion
 		break;
 }
-
-// Parallax 배경
-layer_hspeed ( "bg_ground", -20 * global.gameSpeed);
-layer_hspeed ( "bg_city", -12 * global.gameSpeed);
-layer_hspeed ( "bg_sky", -4 * global.gameSpeed);
 		
 // 디버그
 if (keyboard_check_pressed(vk_f5)) {

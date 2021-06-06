@@ -9,7 +9,7 @@ function scr_player() {
 	}
 	
 	// 중력 가속도
-	vspd += grav;
+	vspd = min(vspd + grav, vspdMax);
 	
 	// 점프
 	if (key_jump && jumpCount > 0 && (jumpCount == jumpCountMax ? place_meeting(x, y + 1, obj_solid) : true)) {
@@ -23,13 +23,10 @@ function scr_player() {
 		
 		// 빔 길이 설정
 		if (isBeam) {
+			beamRange = global.beamRangeMax;
 			if (instance_number(par_enemy) > 0) {
-				if (collision_line(x + beamOffsetX, y + beamOffsetY, x + beamOffsetX + global.beamRangeMax, y + beamOffsetY, par_enemy, false, false) == noone) {
-					beamRange = global.beamRangeMax;
-				} else {
-					while (collision_line(x + beamOffsetX, y + beamOffsetY, x + beamOffsetX + beamRange, y + beamOffsetY, par_enemy, false, false) != noone && beamRange > 1) {
-						beamRange--;
-					}
+				while (collision_line(x + beamOffsetX, y + beamOffsetY, x + beamOffsetX + beamRange, y + beamOffsetY, par_enemy, false, false) != noone && beamRange > 1) {
+					beamRange--;
 				}
 			}
 		}

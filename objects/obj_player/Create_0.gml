@@ -1,6 +1,7 @@
 isDead = false;
 
 // 이동
+vspdMax = 24;
 vspd = 0;
 grav = 1;
 jumpPower = -18

@@ -20,5 +20,3 @@ switch (irandom(9)) {
 		break;
 }
 instance_create_layer(GAME_WIDTH, GAME_HEIGHT - 100, "layer_enemy", enemy);
-
-alarm[ManagerAlarm.Enemy] = ManagerEventTime.Enemy * global.gameSpeed;

@@ -10,8 +10,7 @@ switch (global.gameState) {
 	case GameState.InGame:
 		#region InGame
 		// 점수
-		var scoreText = "점수: ";
-		scoreText = string_insert(global.gameScore, scoreText, string_length(scoreText) + 1);
+		var scoreText = "점수: " + string(global.gameScore);
 		draw_set_color(c_black);
 		draw_text(40, 40, scoreText);
 		draw_set_color(c_white);
@@ -48,8 +47,7 @@ switch (global.gameState) {
 		draw_set_color(c_white);
 	
 		draw_set_halign(fa_center);
-		var gameOverText = "최종점수: ";
-		gameOverText = string_insert(global.gameScore, gameOverText, string_length(gameOverText) + 1);
+		var gameOverText = "최종점수: " + string(global.gameScore);
 		draw_text(GAME_CENTER, GAME_MIDDLE, gameOverText);
 		draw_set_halign(fa_left);
 		#endregion

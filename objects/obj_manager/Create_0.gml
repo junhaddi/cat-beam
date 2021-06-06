@@ -1,6 +1,7 @@
 // 인게임 정보
 global.gameState = GameState.Menu;
 
+global.playerKind = 0;
 global.hpMax = 0;
 global.hp = 0;
 global.defense = 0;
@@ -12,7 +13,12 @@ global.gameScore = 0;
 global.stringBallCount = 0;
 global.mackerelCount = 0;
 
+// Parallax 배경 기본속도
+groundSpeed = -20;
+citySpeed = -12;
+skySpeed = -4;
+
 // Draw
 hpbarSpriteWidth = sprite_get_width(spr_hpbar);
 hpbarSpriteHeight = sprite_get_height(spr_hpbar);
-hpbarWidth = hpbarSpriteWidth * (global.hp / global.hpMax);
+hpbarWidth = 0;
