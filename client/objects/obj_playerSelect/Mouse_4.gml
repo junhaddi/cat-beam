@@ -1,4 +1,6 @@
 if (global.gameState == GameState.PlayerSelect) {
+	global.gameState = GameState.InGame;
+	
 	global.playerKind = kind;
 	global.hpMax = global.playersStatus[| kind][? "hpMax"];
 	global.hp = global.hpMax;
@@ -6,8 +8,6 @@ if (global.gameState == GameState.PlayerSelect) {
 	global.gameSpeed = global.playersStatus[| kind][? "speed"];
 	global.beamDamage = global.playersStatus[| kind][? "beamDamage"];
 	global.beamRangeMax = global.playersStatus[| kind][? "beamRangeMax"];
-	
-	global.gameState = GameState.InGame;
 	
 	with (obj_player) {
 		isDead = false;

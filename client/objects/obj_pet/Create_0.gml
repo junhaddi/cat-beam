@@ -1,6 +1,7 @@
+event_inherited();
+
 isRescue = false;
 petKind = 0;
-_speed = 14;
 
 isDead = false;
 
@@ -16,8 +17,8 @@ jumpCount = jumpCountMax;
 // 공격
 isBeam = false;
 isBeamStraight = false;
-beamOffsetX = 15;
-beamOffsetY = 6;
+beamOffsetX = 80;
+beamOffsetY = -32;
 beamRangeMax = GAME_WIDTH - 800;
 beamRange = 0;
 beamThicknessMax = 12;

@@ -1,4 +1,4 @@
 event_inherited();
 
-hp = 20;
+hp = 15;
 damage = 10;

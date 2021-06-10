@@ -45,24 +45,75 @@ switch (global.gameState) {
 			}
 
 			// 이벤트 발생
-			if (alarm[ManagerAlarm.Enemy] == -1) {
-				alarm[ManagerAlarm.Enemy] = ManagerEventTime.Enemy * global.gameSpeed;
-			}
-			if (alarm[ManagerAlarm.Block] == -1) {
-				alarm[ManagerAlarm.Block] = ManagerEventTime.Block * global.gameSpeed;
-			}
-			if (alarm[ManagerAlarm.Item] == -1) {
-				alarm[ManagerAlarm.Item] = ManagerEventTime.Item * global.gameSpeed;
+			//if (alarm[ManagerAlarm.Enemy] == -1) {
+			//	alarm[ManagerAlarm.Enemy] = ManagerEventTime.Enemy * global.gameSpeed;
+			//}
+			
+			//if (alarm[ManagerAlarm.Block] == -1) {
+			//	alarm[ManagerAlarm.Block] = ManagerEventTime.Block * global.gameSpeed;
+			//}
+			
+			//if (alarm[ManagerAlarm.Item] == -1) {
+			//	alarm[ManagerAlarm.Item] = ManagerEventTime.Item * global.gameSpeed;
+			//}
+			
+			//if (alarm[ManagerAlarm.Item] == -1) {
+			//	alarm[ManagerAlarm.Item] = ManagerEventTime.Item * global.gameSpeed;
+			//}
+			
+			//if (!instance_exists(obj_pet)) {
+			//	if (alarm[ManagerAlarm.Pet] == -1) {
+			//		alarm[ManagerAlarm.Pet] = ManagerEventTime.Pet * global.gameSpeed;
+			//	}
+			//} else {
+			//	alarm[ManagerAlarm.Pet] = 0;
+			//}
+			
+			if (alarm[ManagerAlarm.Wave] == -1) {
+				alarm[ManagerAlarm.Wave] = ManagerEventTime.Wave * global.gameSpeed;
 			}
 
+			if (currentWave != -1) {
+				waveTimer++;
+				if (waveTimer >= waveTimerMax) {
+					if (waveIndex < ds_list_size(currentWave)) {
+						// 펫은 게임에서 딱 하나만 존재해야함
+						if (currentWave[| waveIndex].prop != obj_pet || !instance_exists(obj_pet)) {
+							var _layer;
+							var prop = instance_create_depth(GAME_WIDTH, GAME_HEIGHT - 100, 0, currentWave[| waveIndex].prop);
+							switch (prop.tag) {
+								case Tag.Enemy:
+									_layer = "layer_enemy";
+									break;
+								case Tag.Block:
+									_layer = "layer_block";
+									break;
+								case Tag.Item:
+									_layer = "layer_item";
+									break;
+								case Tag.Pet:
+									_layer = "layer_inst";
+									break;
+							}
+							prop.layer = layer_get_id(_layer);
+						}
+						waveTimerMax = currentWave[| waveIndex].time;
+						waveIndex++;
+					} else {
+						currentWave = -1;
+						waveIndex = 0;
+						waveTimerMax = 0;
+					}
+					waveTimer = 0;
+				}
+			}
+			
 			// Draw
 			hpbarWidth = scr_ease(hpbarWidth, hpbarSpriteWidth * (global.hp / global.hpMax));
 		} else {
 			// 플레이어 사망
-			alarm[ManagerAlarm.Enemy] = 0;
-			alarm[ManagerAlarm.Block] = 0;
-			alarm[ManagerAlarm.Item] = 0;
-			
+			global.gameState = GameState.GameOver;
+
 			// 신기록 달성
 			if (global.gameScore > global.gameHighScore) {
 				global.gameHighScore = global.gameScore;
@@ -70,7 +121,9 @@ switch (global.gameState) {
 				scr_save(SAVE_FILE);
 			}
 			
-			global.gameState = GameState.GameOver;
+			alarm[ManagerAlarm.Enemy] = 0;
+			alarm[ManagerAlarm.Block] = 0;
+			alarm[ManagerAlarm.Item] = 0;
 		}
 		#endregion
 		break;

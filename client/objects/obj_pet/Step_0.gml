@@ -16,3 +16,7 @@ if (isRescue) {
 } else {
 	x -= _speed * global.gameSpeed;
 }
+
+if (bbox_right < 0 || bbox_top > GAME_HEIGHT) {
+	instance_destroy();
+}

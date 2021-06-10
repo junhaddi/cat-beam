@@ -20,6 +20,12 @@ groundSpeed = -20;
 citySpeed = -12;
 skySpeed = -4;
 
+// 웨이브
+currentWave = -1;
+waveIndex = 0;
+waveTimerMax = 0;
+waveTimer = 0;
+
 // Draw
 hpbarSpriteWidth = sprite_get_width(spr_hpbar);
 hpbarSpriteHeight = sprite_get_height(spr_hpbar);

@@ -9,7 +9,8 @@ if (!isDead) {
 	// 펫
 	var _w = random_range(0.8, 1.2);
 	var _h = random_range(0.8, 1.2);
-	draw_sprite_ext(playerSprite, -1, x, y, _w * isRescue ? 1 : -1, _h, 0, c_white, obj_player.isDamaged ? 0.5 : 1);
+	var _a = isRescue ? (obj_player.isDamaged ? 0.5 : 1) : 1; 
+	draw_sprite_ext(playerSprite, -1, x, y, _w * isRescue ? 1 : -1, _h, 0, c_white, _a);
 
 	// 고양이빔
 	if (beamThickness > 1) {

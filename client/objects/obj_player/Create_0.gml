@@ -1,3 +1,5 @@
+tag = Tag.Player;
+
 isDead = false;
 
 // 이동

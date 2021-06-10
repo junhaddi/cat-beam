@@ -7,7 +7,7 @@ if (path_position == 1) {
 		isDead = true;
 		isDamaged = false;
 	}
-
+	
 	if (isBeam) {
 		beamThickness = scr_ease(beamThickness, beamThicknessMax + random(10));
 	} else {
