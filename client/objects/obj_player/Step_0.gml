@@ -1,11 +1,13 @@
 if (path_position == 1) {
 	scr_player();
 
-	if (global.hp < 1 && !isDead) {
+	if (global.hp <= 0 && !isDead) {
 		// 죽을 때 폴짝 뜀
 		vspd = jumpPower;
-		isDead = true;
+		beamThickness = 0;
+		isBeam = false;
 		isDamaged = false;
+		isDead = true;
 	}
 	
 	if (isBeam) {

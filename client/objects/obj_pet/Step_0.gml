@@ -1,11 +1,13 @@
 if (isRescue) {
 	scr_pet();
 
-	if ((global.petHp < 1 || global.hp < 1) && !isDead) {
+	if ((global.petHp <= 0 || global.hp <= 0) && !isDead) {
 		// 죽을 때 폴짝 뜀
 		vspd = jumpPower;
-		isDead = true;
+		beamThickness = 0;
+		isBeam = false;
 		isDamaged = false;
+		isDead = true;
 	}
 
 	if (isBeam) {

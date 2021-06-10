@@ -58,8 +58,7 @@ function scr_init() {
 	player1[? "beamRangeMax"] = GAME_WIDTH - 400;
 
 	var player2 = ds_map_create();
-	//player2[? "hpMax"] = 80;
-	player2[? "hpMax"] = 5;
+	player2[? "hpMax"] = 80;
 	player2[? "defence"] = 0;
 	player2[? "speed"] = 1.2;
 	player2[? "beamDamage"] = 1.2;
@@ -91,6 +90,10 @@ function scr_init() {
 		time: GAME_FPS * 1,
 	});
 	ds_list_add(wave1, {
+		prop: obj_pet,
+		time: GAME_FPS * 1,
+	});
+	ds_list_add(wave1, {
 		prop: obj_man,
 		time: GAME_FPS * 0.3,
 	});
@@ -110,6 +113,10 @@ function scr_init() {
 		time: GAME_FPS * 0.1,
 	});
 	ds_list_add(wave2, {
+		prop: obj_pet,
+		time: GAME_FPS * 1,
+	});
+	ds_list_add(wave2, {
 		prop: obj_hellchang,
 		time: GAME_FPS * 0.1,
 	});
@@ -126,6 +133,10 @@ function scr_init() {
 	var wave3 = ds_list_create();
 	ds_list_add(wave3, {
 		prop: obj_woman,
+		time: GAME_FPS * 1,
+	});
+	ds_list_add(wave3, {
+		prop: obj_pet,
 		time: GAME_FPS * 1,
 	});
 	ds_list_add(wave3, {
