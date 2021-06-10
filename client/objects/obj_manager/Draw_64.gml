@@ -1,6 +1,14 @@
 switch (global.gameState) {
-	case GameState.Menu:
-		#region Menu
+	case GameState.MainMenu:
+		#region MainMenu
+		draw_set_halign(fa_center);
+		draw_text(GAME_CENTER, 300, "고양이빔");
+		draw_text(GAME_CENTER, GAME_HEIGHT - 300, "아무키나 눌러서 지구정복");
+		draw_set_halign(fa_left);
+		#endregion
+		break;
+	case GameState.PlayerSelect:
+		#region PlayerSelect
 		#endregion
 		break;
 	case GameState.Tutorial:

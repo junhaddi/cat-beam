@@ -1,4 +1,4 @@
-if (global.gameState == GameState.Menu) {
+if (global.gameState == GameState.PlayerSelect) {
 	if (position_meeting(mouse_x, mouse_y, self)) {
 		// Mouse Enter
 		imageScale = 1.2;

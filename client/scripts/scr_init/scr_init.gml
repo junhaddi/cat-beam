@@ -7,7 +7,8 @@ function scr_init() {
 	#macro GAME_MIDDLE 360
 	
 	enum GameState {
-		Menu,
+		MainMenu,
+		PlayerSelect,
 		Tutorial,
 		InGame,
 		GameOver,

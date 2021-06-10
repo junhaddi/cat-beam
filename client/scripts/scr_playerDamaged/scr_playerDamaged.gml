@@ -1,4 +1,4 @@
-function scr_playerDamaged(){
+function scr_playerDamaged() {
 	if (!isDamaged) {
 		if (global.petHp > 0) {
 			global.petHp--;

@@ -1,10 +1,23 @@
 switch (global.gameState) {
-	case GameState.Menu:
-		#region Menu
+	case GameState.MainMenu:
+		#region MainMenu
 		// Parallax 배경 속도설정
-		layer_hspeed ( "bg_ground", groundSpeed);
-		layer_hspeed ( "bg_city", citySpeed);
-		layer_hspeed ( "bg_sky", skySpeed);
+		layer_hspeed("bg_ground", groundSpeed);
+		layer_hspeed("bg_city", citySpeed);
+		layer_hspeed("bg_sky", skySpeed);
+		
+		// 게임시작
+		if (keyboard_check_pressed(vk_anykey)) {
+			global.gameState = GameState.PlayerSelect;
+		}
+		#endregion
+		break;
+	case GameState.PlayerSelect:
+		#region PlayerSelect
+		// Parallax 배경 속도설정
+		layer_hspeed("bg_ground", groundSpeed);
+		layer_hspeed("bg_city", citySpeed);
+		layer_hspeed("bg_sky", skySpeed);
 		#endregion
 		break;
 	case GameState.Tutorial:
@@ -19,15 +32,15 @@ switch (global.gameState) {
 			global.gameScore += 1;
 			
 			// Parallax 배경 속도설정
-			layer_hspeed ( "bg_ground", groundSpeed * global.gameSpeed);
-			layer_hspeed ( "bg_city", citySpeed * global.gameSpeed);
-			layer_hspeed ( "bg_sky", skySpeed * global.gameSpeed);
+			layer_hspeed("bg_ground", groundSpeed * global.gameSpeed);
+			layer_hspeed("bg_city", citySpeed * global.gameSpeed);
+			layer_hspeed("bg_sky", skySpeed * global.gameSpeed);
 
 			// 게임 일시정지
 			if (keyboard_check_pressed(vk_escape)) {
-				layer_hspeed ( "bg_ground", 0);
-				layer_hspeed ( "bg_city", 0);
-				layer_hspeed ( "bg_sky", 0);
+				layer_hspeed("bg_ground", 0);
+				layer_hspeed("bg_city", 0);
+				layer_hspeed("bg_sky", 0);
 				instance_create_layer(0, 0, "layer_inst", obj_pause);
 			}
 
@@ -63,6 +76,12 @@ switch (global.gameState) {
 		break;
 	case GameState.GameOver:
 		#region GameOver
+		if (keyboard_check_pressed(ord("R"))) {
+			global.gameState = GameState.PlayerSelect;
+			global.gameScore = 0;
+			global.stringBallCount = 0;
+			global.mackerelCount = 0;
+		}
 		#endregion
 		break;
 }
