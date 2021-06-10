@@ -1,22 +1,15 @@
 var playerSprite;
-switch (global.playerKind) {
+switch (petKind) {
 	case 0:
-		playerSprite = spr_player1;
-		break;
-	case 1:
-		playerSprite = spr_player2;
-		break;
-	case 2:
-		playerSprite = spr_player3;
+		playerSprite = spr_pet1;
 		break;
 }
 
 if (!isDead) {
-	// 플레이어
+	// 펫
 	var _w = random_range(0.8, 1.2);
 	var _h = random_range(0.8, 1.2);
-	var _a = global.petHp > 0 ? 1 : (isDamaged ? 0.5 : 1);
-	draw_sprite_ext(playerSprite, -1, x, y, _w, _h, 0, c_white, _a);
+	draw_sprite_ext(playerSprite, -1, x, y, _w * isRescue ? 1 : -1, _h, 0, c_white, obj_player.isDamaged ? 0.5 : 1);
 
 	// 고양이빔
 	if (beamThickness > 1) {
@@ -27,6 +20,6 @@ if (!isDead) {
 		gpu_set_blendmode(bm_normal);
 	}
 } else {
-	// 플레이어 사망
-	draw_sprite_ext(playerSprite, -1, x, y, 1, -1, 0, c_white, 1);
+	// 펫 사망
+	draw_sprite_ext(playerSprite, -1, x, y, isRescue ? 1 : -1, -1, 0, c_white, 1);
 }

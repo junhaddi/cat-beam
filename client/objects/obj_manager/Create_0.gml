@@ -9,6 +9,8 @@ global.gameSpeed = 0;
 global.beamDamage = 0;
 global.beamRangeMax = 0;
 
+global.petHp = 0;
+
 global.gameScore = 0;
 global.stringBallCount = 0;
 global.mackerelCount = 0;
