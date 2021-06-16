@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/junhaddi/cat-beam#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "firebase": "^8.6.7"
   }
 }

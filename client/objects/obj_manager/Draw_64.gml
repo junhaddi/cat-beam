@@ -2,7 +2,7 @@ switch (global.gameState) {
 	case GameState.MainMenu:
 		#region MainMenu
 		draw_set_halign(fa_center);
-		draw_text(GAME_CENTER, 300, "고양이빔");
+		draw_sprite(spr_logo, -1, GAME_CENTER, 300);
 		draw_text(GAME_CENTER, GAME_HEIGHT - 300, "아무키나 눌러서 지구정복");
 		draw_set_halign(fa_left);
 		#endregion

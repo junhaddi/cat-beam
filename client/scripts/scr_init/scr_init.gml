@@ -1,4 +1,5 @@
 function scr_init() {
+	#macro SERVER_URL "http://localhost:30605"
 	#macro SAVE_FILE "data.sav"
 	#macro GAME_FPS 60
 	#macro GAME_WIDTH 1280

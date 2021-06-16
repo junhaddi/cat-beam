@@ -143,4 +143,8 @@ switch (global.gameState) {
 if (keyboard_check_pressed(vk_f5)) {
 	room_restart();
 }
-	
+
+if (keyboard_check_pressed(vk_left)) {
+	// 불러오기
+	http_get(SERVER_URL + "/leaderboards");
+}
