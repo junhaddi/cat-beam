@@ -148,3 +148,10 @@ if (keyboard_check_pressed(vk_left)) {
 	// 불러오기
 	http_get(SERVER_URL + "/leaderboards");
 }
+
+if (keyboard_check_pressed(vk_right)) {
+	// 저장(한글 입력시 버그) 바디파서 공부
+	var name = get_string("이름을 적어주세요", "Anonymous");
+	var query = "name=" + name + "&score=" + string(global.gameHighScore);
+	http_post_string(SERVER_URL + "/leaderboards?" + query, query);
+}

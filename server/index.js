@@ -6,12 +6,11 @@ const leaderboardRef = database.ref('leaderboards');
 
 // 라우팅
 app.get('/leaderboards', (req, res) => {
-  leaderboardRef.on(
+  leaderboardRef.once(
     'value',
     (snapshot) => {
       const data = snapshot.val();
-      console.log(data.score);
-      res.json(data);
+      return res.json(data);
     },
     (errorObject) => {
       console.log('The read failed: ' + errorObject.name);
@@ -20,16 +19,16 @@ app.get('/leaderboards', (req, res) => {
 });
 
 app.post('/leaderboards', (req, res) => {
+  const data = { name: req.query.name, score: req.query.score, date: Date.now() };
   leaderboardRef
-    .push()
-    .set({ name: 'nickname', score: 100, date: Date.now() })
+    .push(data)
     .then(() => {
-      console.log({ name: 'nickname', score: 100, date: Date.now() });
-      res.sendStatus(200);
+      console.log(data);
+      return res.sendStatus(200);
     })
     .catch((error) => {
       console.log(error);
-      res.sendStatus(500);
+      return res.sendStatus(500);
     });
 });
 
