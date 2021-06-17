@@ -1,11 +1,14 @@
 // 인게임 정보
 global.gameState = GameState.MainMenu;
 
+global.isFever = false;
+
 global.playerKind = 0;
 global.hpMax = 0;
 global.hp = 0;
 global.defence = 0;
 global.gameSpeed = 0;
+global._gameSpeed = 0;
 global.beamDamage = 0;
 global.beamRangeMax = 0;
 

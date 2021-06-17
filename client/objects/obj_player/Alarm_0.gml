@@ -1,3 +1,3 @@
-/// @description 무적시간
+/// @description 무적해제
 
 isDamaged = false;

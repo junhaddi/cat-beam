@@ -1,16 +1,13 @@
 {
   "spriteId": {
-    "name": "spr_pet1",
-    "path": "sprites/spr_pet1/spr_pet1.yy",
+    "name": "spr_player1",
+    "path": "sprites/spr_player1/spr_player1.yy",
   },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "par_pet",
-    "path": "objects/par_pet/par_pet.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -31,11 +28,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "04_Pets",
-    "path": "folders/Objects/200_props/04_Pets.yy",
+    "name": "100_Player",
+    "path": "folders/Objects/100_Player.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_pet",
+  "name": "obj_fever",
   "tags": [],
   "resourceType": "GMObject",
 }

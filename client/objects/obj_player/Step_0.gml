@@ -10,6 +10,7 @@ if (path_position == 1) {
 		isDead = true;
 	}
 	
+	// 고양이빔
 	if (isBeam) {
 		beamThickness = scr_ease(beamThickness, beamThicknessMax + random(10));
 	} else {

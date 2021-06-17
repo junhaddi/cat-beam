@@ -19,6 +19,7 @@ beamOffsetY = 12;
 beamRange = 0;
 beamThicknessMax = 24;
 beamThickness = 0;
+beamColor = c_yellow;
 
 // 피격
 isDamaged = false;

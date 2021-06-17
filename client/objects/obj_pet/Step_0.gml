@@ -6,7 +6,6 @@ if (isRescue) {
 		vspd = jumpPower;
 		beamThickness = 0;
 		isBeam = false;
-		isDamaged = false;
 		isDead = true;
 	}
 

@@ -12,7 +12,6 @@ switch (global.playerKind) {
 }
 
 if (!isDead) {
-	// 플레이어
 	var _w = random_range(0.8, 1.2);
 	var _h = random_range(0.8, 1.2);
 	var _a = instance_exists(obj_pet) ? 1 : (isDamaged ? 0.5 : 1);
@@ -21,7 +20,7 @@ if (!isDead) {
 	// 고양이빔
 	if (beamThickness > 1) {
 		gpu_set_blendmode(bm_add);
-		draw_set_color(c_yellow);
+		draw_set_color(beamColor);
 		draw_rectangle(x + beamOffsetX, y + beamOffsetY - beamThickness, x + beamOffsetX + beamRange, y + beamOffsetY + beamThickness, false);
 		draw_set_color(c_white);
 		gpu_set_blendmode(bm_normal);

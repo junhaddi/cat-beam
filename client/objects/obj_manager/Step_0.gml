@@ -26,9 +26,14 @@ switch (global.gameState) {
 		break;
 	case GameState.InGame:
 		#region InGame
-		global.hp -= 1 / GAME_FPS;
-		global.gameSpeed += 1 / (GAME_FPS * 360);
-		
+		if (global.isFever) {
+			global.gameSpeed = global._gameSpeed * 3;
+		} else {
+			global.hp -= 1 / GAME_FPS;
+			global.gameSpeed += 1 / (GAME_FPS * 360);
+			global._gameSpeed = global.gameSpeed;
+		}
+	
 		if (global.hp > 0) {
 			global.gameScore += 1;
 			
@@ -45,8 +50,9 @@ switch (global.gameState) {
 				instance_create_layer(0, 0, "layer_inst", obj_pause);
 			}
 			
+			// 웨이브 발생
 			if (alarm[ManagerAlarm.Wave] == -1) {
-				alarm[ManagerAlarm.Wave] = ManagerEventTime.Wave * global.gameSpeed;
+				alarm[ManagerAlarm.Wave] = GAME_FPS * 2;
 			}
 
 			if (currentWave != -1) {
@@ -84,6 +90,17 @@ switch (global.gameState) {
 				}
 			}
 			
+			// 피버타임
+			if (global.mackerelCount >= 5) {
+				global.isFever = true;
+				global.mackerelCount = 0;
+				alarm[ManagerAlarm.Fever] = GAME_FPS * 10;
+				
+				repeat(6) {
+					instance_create_layer(random_range(obj_player.x - 200, obj_player.x + 200), 0, "layer_inst", obj_fever);
+				}
+			}
+	
 			// Draw
 			hpbarWidth = scr_ease(hpbarWidth, hpbarSpriteWidth * (global.hp / global.hpMax));
 		} else {
@@ -118,18 +135,34 @@ switch (global.gameState) {
 }
 		
 // 디버그
+if (keyboard_check_pressed(vk_f1)) {
+	global.hp = global.hpMax;
+}
+
+if (keyboard_check_pressed(vk_f2)) {
+	global.stringBallCount++;
+}
+
+if (keyboard_check_pressed(vk_f3)) {
+	global.mackerelCount++;
+}
+
+if (keyboard_check_pressed(vk_f4)) {
+	global.gameSpeed += 0.1;
+}
+
 if (keyboard_check_pressed(vk_f5)) {
 	room_restart();
 }
 
-if (keyboard_check_pressed(vk_left)) {
-	// 불러오기
-	http_get(SERVER_URL + "/leaderboards");
-}
+//if (keyboard_check_pressed(vk_left)) {
+//	// 불러오기
+//	http_get(SERVER_URL + "/leaderboards");
+//}
 
-if (keyboard_check_pressed(vk_right)) {
-	// 저장(한글 입력시 버그) 바디파서 공부
-	var name = get_string("이름을 적어주세요", "Anonymous");
-	var query = "name=" + name + "&score=" + string(global.gameHighScore);
-	http_post_string(SERVER_URL + "/leaderboards?" + query, query);
-}
+//if (keyboard_check_pressed(vk_right)) {
+//	// 저장(한글 입력시 버그) 바디파서 공부
+//	var name = get_string("이름을 적어주세요", "Anonymous");
+//	var query = "name=" + name + "&score=" + string(global.gameHighScore);
+//	http_post_string(SERVER_URL + "/leaderboards?" + query, query);
+//}

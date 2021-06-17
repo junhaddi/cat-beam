@@ -23,3 +23,4 @@ beamRangeMax = GAME_WIDTH - 800;
 beamRange = 0;
 beamThicknessMax = 12;
 beamThickness = 0;
+beamColor = choose(c_red, c_green, c_blue);

@@ -1,21 +1,20 @@
-var playerSprite;
-switch (petKind) {
+var feverSprite;
+switch (feverKind) {
 	case 0:
-		playerSprite = spr_pet1;
+		feverSprite = spr_player1;
 		break;
 	case 1:
-		playerSprite = spr_pet2;
+		feverSprite = spr_player2;
 		break;
 	case 2:
-		playerSprite = spr_pet3;
+		feverSprite = spr_player3;
 		break;
 }
 
 if (!isDead) {
-	var _w = random_range(0.8, 1.2) * isRescue ? 1 : -1;
+	var _w = random_range(0.8, 1.2);
 	var _h = random_range(0.8, 1.2);
-	var _a = isRescue ? (obj_player.isDamaged ? 0.5 : 1) : 1; 
-	draw_sprite_ext(playerSprite, -1, x, y, _w, _h, 0, c_white, _a);
+	draw_sprite_ext(feverSprite, -1, x, y, _w, _h, 0, c_white, 1);
 
 	// 고양이빔
 	if (beamThickness > 1) {
@@ -26,6 +25,6 @@ if (!isDead) {
 		gpu_set_blendmode(bm_normal);
 	}
 } else {
-	// 펫 사망
-	draw_sprite_ext(playerSprite, -1, x, y, isRescue ? 1 : -1, -1, 0, c_white, 1);
+	// 피버타임 종료
+	draw_sprite_ext(feverSprite, -1, x, y, 1, -1, 0, c_white, 1);
 }
