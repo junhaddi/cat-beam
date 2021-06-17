@@ -1,3 +1,3 @@
-_speed = 20;
+event_inherited();
 
 tag = Tag.Item;

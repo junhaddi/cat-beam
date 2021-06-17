@@ -43,31 +43,6 @@ switch (global.gameState) {
 				layer_hspeed("bg_sky", 0);
 				instance_create_layer(0, 0, "layer_inst", obj_pause);
 			}
-
-			// 이벤트 발생
-			//if (alarm[ManagerAlarm.Enemy] == -1) {
-			//	alarm[ManagerAlarm.Enemy] = ManagerEventTime.Enemy * global.gameSpeed;
-			//}
-			
-			//if (alarm[ManagerAlarm.Block] == -1) {
-			//	alarm[ManagerAlarm.Block] = ManagerEventTime.Block * global.gameSpeed;
-			//}
-			
-			//if (alarm[ManagerAlarm.Item] == -1) {
-			//	alarm[ManagerAlarm.Item] = ManagerEventTime.Item * global.gameSpeed;
-			//}
-			
-			//if (alarm[ManagerAlarm.Item] == -1) {
-			//	alarm[ManagerAlarm.Item] = ManagerEventTime.Item * global.gameSpeed;
-			//}
-			
-			//if (!instance_exists(obj_pet)) {
-			//	if (alarm[ManagerAlarm.Pet] == -1) {
-			//		alarm[ManagerAlarm.Pet] = ManagerEventTime.Pet * global.gameSpeed;
-			//	}
-			//} else {
-			//	alarm[ManagerAlarm.Pet] = 0;
-			//}
 			
 			if (alarm[ManagerAlarm.Wave] == -1) {
 				alarm[ManagerAlarm.Wave] = ManagerEventTime.Wave * global.gameSpeed;
@@ -120,10 +95,6 @@ switch (global.gameState) {
 				global.saveMap[? "highScore"] = global.gameHighScore;
 				scr_save(SAVE_FILE);
 			}
-			
-			alarm[ManagerAlarm.Enemy] = 0;
-			alarm[ManagerAlarm.Block] = 0;
-			alarm[ManagerAlarm.Item] = 0;
 		}
 		#endregion
 		break;
