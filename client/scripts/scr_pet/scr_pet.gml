@@ -9,11 +9,12 @@ function scr_pet() {
 	}
 	
 	// 중력 가속도
-	vspd = min(vspd + grav, vspdMax);
+	vspd += grav * global.gameSpeed;
+	vspd = clamp(vspd, -vspdMax, vspdMax);
 	
 	// 점프
 	if (key_jump && jumpCount > 0 && (jumpCount == jumpCountMax ? place_meeting(x, y + 1, obj_solid) : true)) {
-		vspd = jumpPower;
+		vspd = jumpPower * global.gameSpeed;
 		jumpCount--;
 	}
 	

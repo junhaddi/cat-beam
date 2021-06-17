@@ -1,4 +1,4 @@
 event_inherited();
 
-hp = 30;
-damage = 20;
+hp = 35;
+damage = random_range(20, 25);

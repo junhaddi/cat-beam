@@ -1,16 +1,17 @@
 if (global.gameState == GameState.PlayerSelect) {
 	global.gameState = GameState.InGame;
-	
 	global.playerKind = kind;
-	global.hpMax = global.playersStatus[| kind][? "hpMax"];
+	
+	global.hpMax = global.playersStatus[| global.playerKind][? "hpMax"];
 	global.hp = global.hpMax;
-	global.defence = global.playersStatus[| kind][? "defence"];
-	global.gameSpeed = global.playersStatus[| kind][? "speed"];
-	global.beamDamage = global.playersStatus[| kind][? "beamDamage"];
-	global.beamRangeMax = global.playersStatus[| kind][? "beamRangeMax"];
+	global.defence = global.playersStatus[| global.playerKind][? "defence"];
+	global.gameSpeed = global.playersStatus[| global.playerKind][? "speed"];
+	global.beamDamage = global.playersStatus[| global.playerKind][? "beamDamage"];
+	global.beamRangeMax = global.playersStatus[| global.playerKind][? "beamRangeMax"];
 	
 	with (obj_player) {
 		isDead = false;
+		isBeamStraight = global.playersStatus[| global.playerKind][? "beamStraight"];
 		path_start(path_playerStart, 24, path_action_stop, true);
 	}
 }

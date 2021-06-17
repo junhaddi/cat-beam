@@ -1,14 +1,14 @@
 event_inherited();
 
 isRescue = false;
-petKind = 0;
+petKind = irandom(2);
 
 isDead = false;
 
 // 이동
 vspdMax = 24;
 vspd = 0;
-grav = 1;
+grav = 1.2;
 jumpPower = -24;
 
 jumpCountMax = 2;

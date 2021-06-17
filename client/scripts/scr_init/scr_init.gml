@@ -32,7 +32,7 @@ function scr_init() {
 	};
 	
 	enum ManagerEventTime {
-		Wave = 120,
+		Wave = 180,
 	};
 
 	// 세이브파일 불러오기
@@ -44,25 +44,29 @@ function scr_init() {
 
 	// 플레이어별 정보 입력
 	var player1 = ds_map_create();
-	player1[? "hpMax"] = 100;
-	player1[? "defence"] = 0;
+	player1[? "hpMax"] = 200;
+	player1[? "defence"] = 2;
 	player1[? "speed"] = 1;
 	player1[? "beamDamage"] = 1;
-	player1[? "beamRangeMax"] = GAME_WIDTH - 400;
+	player1[? "beamRangeMax"] = GAME_WIDTH - 500;
+	player1[? "beamStraight"] = false;
 
 	var player2 = ds_map_create();
-	player2[? "hpMax"] = 80;
+	player2[? "hpMax"] = 160;
 	player2[? "defence"] = 0;
 	player2[? "speed"] = 1.2;
-	player2[? "beamDamage"] = 1.2;
-	player2[? "beamRangeMax"] = GAME_WIDTH - 500;
+	player2[? "beamDamage"] = 0.8;
+	player2[? "beamRangeMax"] = GAME_WIDTH;
+	player2[? "beamStraight"] = true;
 
 	var player3 = ds_map_create();
-	player3[? "hpMax"] = 120;
-	player3[? "defence"] = 1;
+	player3[? "hpMax"] = 240;
+	player3[? "defence"] = 4;
 	player3[? "speed"] = 0.8;
 	player3[? "beamDamage"] = 1;
 	player3[? "beamRangeMax"] = GAME_WIDTH - 600;
+	player3[? "beamStraight"] = false;
+
 
 	// 플레이어 정보 구조체화
 	global.playersStatus = ds_list_create();
@@ -76,23 +80,27 @@ function scr_init() {
 	ds_list_mark_as_map(global.playersStatus, 2);
 
 	// 웨이브 정보 입력
+	var space1 = 1.2;
+	var space2 = 1.6;
+	var space3 = 1.4;
+
 	#region wave1
 	var wave1 = ds_list_create();
 	ds_list_add(wave1, {
 		prop: obj_block3,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave1, {
 		prop: obj_block3,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave1, {
 		prop: obj_block4,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave1, {
 		prop: obj_block1,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave1, {
 		prop: obj_block2,
@@ -103,19 +111,19 @@ function scr_init() {
 	var wave2 = ds_list_create();
 	ds_list_add(wave2, {
 		prop: obj_block3,
-		time: GAME_FPS * 1.6,
+		time: GAME_FPS * space1,
 	});
 	ds_list_add(wave2, {
 		prop: obj_block1,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave2, {
 		prop: obj_block3,
-		time: GAME_FPS * 1.6,
+		time: GAME_FPS * space1,
 	});
 	ds_list_add(wave2, {
 		prop: obj_block2,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave2, {
 		prop: obj_block4,
@@ -126,19 +134,19 @@ function scr_init() {
 	var wave3 = ds_list_create();
 	ds_list_add(wave3, {
 		prop: obj_block1,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave3, {
 		prop: obj_block3,
-		time: GAME_FPS * 1.6,
+		time: GAME_FPS * space1,
 	});
 	ds_list_add(wave3, {
 		prop: obj_block2,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave3, {
 		prop: obj_block3,
-		time: GAME_FPS * 1.6,
+		time: GAME_FPS * space1,
 	});
 	ds_list_add(wave3, {
 		prop: obj_block1,
@@ -149,19 +157,19 @@ function scr_init() {
 	var wave4 = ds_list_create();
 	ds_list_add(wave4, {
 		prop: obj_block3,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave4, {
 		prop: obj_block4,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave4, {
 		prop: obj_block3,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave4, {
 		prop: obj_block4,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave4, {
 		prop: obj_block3,
@@ -172,19 +180,19 @@ function scr_init() {
 	var wave5 = ds_list_create();
 	ds_list_add(wave5, {
 		prop: obj_block3,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave5, {
 		prop: obj_block4,
-		time: GAME_FPS * 1.6,
+		time: GAME_FPS * space1,
 	});
 	ds_list_add(wave5, {
 		prop: obj_block1,
-		time: GAME_FPS * 1.6,
+		time: GAME_FPS * space2,
 	});
 	ds_list_add(wave5, {
 		prop: obj_block4,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space1,
 	});
 	ds_list_add(wave5, {
 		prop: obj_block2,
@@ -195,19 +203,19 @@ function scr_init() {
 	var wave6 = ds_list_create();
 	ds_list_add(wave6, {
 		prop: obj_man,
-		time: GAME_FPS * 1.6,
+		time: GAME_FPS * space2,
 	});
 	ds_list_add(wave6, {
 		prop: obj_block3,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave6, {
 		prop: obj_man,
-		time: GAME_FPS * 1.6,
+		time: GAME_FPS * space2,
 	});
 	ds_list_add(wave6, {
 		prop: obj_block3,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave6, {
 		prop: obj_hellchang,
@@ -218,19 +226,19 @@ function scr_init() {
 	var wave7 = ds_list_create();
 	ds_list_add(wave7, {
 		prop: obj_block1,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave7, {
 		prop: obj_woman,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave7, {
 		prop: obj_woman,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave7, {
 		prop: obj_hellchang,
-		time: GAME_FPS * 1.6,
+		time: GAME_FPS * space2,
 	});
 	ds_list_add(wave7, {
 		prop: obj_block2,
@@ -241,19 +249,19 @@ function scr_init() {
 	var wave8 = ds_list_create();
 	ds_list_add(wave8, {
 		prop: obj_block1,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave8, {
 		prop: obj_hellchang,
-		time: GAME_FPS * 1.6,
+		time: GAME_FPS * space2,
 	});
 	ds_list_add(wave8, {
 		prop: obj_block4,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave8, {
 		prop: obj_man,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave8, {
 		prop: obj_man,
@@ -264,19 +272,19 @@ function scr_init() {
 	var wave9 = ds_list_create();
 	ds_list_add(wave9, {
 		prop: obj_woman,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave9, {
 		prop: obj_man,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave9, {
 		prop: obj_woman,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave9, {
 		prop: obj_man,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave9, {
 		prop: obj_hellchang,
@@ -287,19 +295,19 @@ function scr_init() {
 	var wave10 = ds_list_create();
 	ds_list_add(wave10, {
 		prop: obj_woman,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave10, {
 		prop: obj_woman,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave10, {
 		prop: obj_woman,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave10, {
 		prop: obj_man,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave10, {
 		prop: obj_man,
@@ -310,19 +318,19 @@ function scr_init() {
 	var wave11 = ds_list_create();
 	ds_list_add(wave11, {
 		prop: obj_block3,
-		time: GAME_FPS * 1.6,
+		time: GAME_FPS * space1,
 	});
 	ds_list_add(wave11, {
 		prop: obj_block4,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave11, {
 		prop: obj_stringBall,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave11, {
 		prop: obj_block3,
-		time: GAME_FPS * 1.6,
+		time: GAME_FPS * space2,
 	});
 	ds_list_add(wave11, {
 		prop: obj_block2,
@@ -333,19 +341,19 @@ function scr_init() {
 	var wave12 = ds_list_create();
 	ds_list_add(wave12, {
 		prop: obj_block1,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave12, {
 		prop: obj_block3,
-		time: GAME_FPS * 1.6,
+		time: GAME_FPS * space1,
 	});
 	ds_list_add(wave12, {
 		prop: obj_block2,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave12, {
 		prop: obj_stringBall,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space1,
 	});
 	ds_list_add(wave12, {
 		prop: obj_block1,
@@ -356,19 +364,19 @@ function scr_init() {
 	var wave13 = ds_list_create();
 	ds_list_add(wave13, {
 		prop: obj_block3,
-		time: GAME_FPS * 1.6,
+		time: GAME_FPS * space1,
 	});
 	ds_list_add(wave13, {
 		prop: obj_block4,
-		time: GAME_FPS * 1.6,
+		time: GAME_FPS * space1,
 	});
 	ds_list_add(wave13, {
 		prop: obj_block3,
-		time: GAME_FPS * 1.6,
+		time: GAME_FPS * space1,
 	});
 	ds_list_add(wave13, {
 		prop: obj_block4,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave13, {
 		prop: obj_ciao,
@@ -379,19 +387,19 @@ function scr_init() {
 	var wave14 = ds_list_create();
 	ds_list_add(wave14, {
 		prop: obj_block2,
-		time: GAME_FPS * 1.6,
+		time: GAME_FPS * space1,
 	});
 	ds_list_add(wave14, {
 		prop: obj_block4,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave14, {
 		prop: obj_ciao,
-		time: GAME_FPS * 1.6,
+		time: GAME_FPS * space1,
 	});
 	ds_list_add(wave14, {
 		prop: obj_block4,
-		time: GAME_FPS * 1.6,
+		time: GAME_FPS * space1,
 	});
 	ds_list_add(wave14, {
 		prop: obj_block1,
@@ -402,19 +410,19 @@ function scr_init() {
 	var wave15 = ds_list_create();
 	ds_list_add(wave15, {
 		prop: obj_block3,
-		time: GAME_FPS * 1.6,
+		time: GAME_FPS * space1,
 	});
 	ds_list_add(wave15, {
 		prop: obj_block4,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave15, {
 		prop: obj_mackerel,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave15, {
 		prop: obj_block3,
-		time: GAME_FPS * 1.6,
+		time: GAME_FPS * space2,
 	});
 	ds_list_add(wave15, {
 		prop: obj_block1,
@@ -425,19 +433,19 @@ function scr_init() {
 	var wave16 = ds_list_create();
 	ds_list_add(wave16, {
 		prop: obj_block4,
-		time: GAME_FPS * 1.6,
+		time: GAME_FPS * space1,
 	});
 	ds_list_add(wave16, {
 		prop: obj_block4,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave16, {
 		prop: obj_block2,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave16, {
 		prop: obj_mackerel,
-		time: GAME_FPS * 1.6,
+		time: GAME_FPS * space2,
 	});
 	ds_list_add(wave16, {
 		prop: obj_block1,
@@ -448,19 +456,19 @@ function scr_init() {
 	var wave17 = ds_list_create();
 	ds_list_add(wave17, {
 		prop: obj_block3,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave17, {
 		prop: obj_block4,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave17, {
 		prop: obj_man,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave17, {
 		prop: obj_stringBall,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave17, {
 		prop: obj_hellchang,
@@ -471,19 +479,19 @@ function scr_init() {
 	var wave18 = ds_list_create();
 	ds_list_add(wave18, {
 		prop: obj_woman,
-		time: GAME_FPS * 1.6,
+		time: GAME_FPS * space2,
 	});
 	ds_list_add(wave18, {
 		prop: obj_block2,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave18, {
 		prop: obj_man,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave18, {
 		prop: obj_hellchang,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave18, {
 		prop: obj_ciao,
@@ -494,19 +502,19 @@ function scr_init() {
 	var wave19 = ds_list_create();
 	ds_list_add(wave19, {
 		prop: obj_block2,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave19, {
 		prop: obj_man,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave19, {
 		prop: obj_mackerel,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave19, {
 		prop: obj_hellchang,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave19, {
 		prop: obj_block4,
@@ -517,19 +525,19 @@ function scr_init() {
 	var wave20 = ds_list_create();
 	ds_list_add(wave20, {
 		prop: obj_block2,
-		time: GAME_FPS * 1.6,
+		time: GAME_FPS * space1,
 	});
 	ds_list_add(wave20, {
 		prop: obj_block1,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave20, {
 		prop: obj_man,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave20, {
 		prop: obj_man,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave20, {
 		prop: obj_mackerel,
@@ -540,19 +548,19 @@ function scr_init() {
 	var wave21 = ds_list_create();
 	ds_list_add(wave21, {
 		prop: obj_woman,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave21, {
 		prop: obj_woman,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave21, {
 		prop: obj_man,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave21, {
 		prop: obj_hellchang,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave21, {
 		prop: obj_pet,
@@ -563,19 +571,19 @@ function scr_init() {
 	var wave22 = ds_list_create();
 	ds_list_add(wave22, {
 		prop: obj_pet,
-		time: GAME_FPS * 1.6,
+		time: GAME_FPS * space1,
 	});
 	ds_list_add(wave22, {
 		prop: obj_block3,
-		time: GAME_FPS * 1.6,
+		time: GAME_FPS * space1,
 	});
 	ds_list_add(wave22, {
 		prop: obj_block3,
-		time: GAME_FPS * 1.6,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave22, {
 		prop: obj_hellchang,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave22, {
 		prop: obj_hellchang,
@@ -586,23 +594,23 @@ function scr_init() {
 	var wave23 = ds_list_create();
 	ds_list_add(wave23, {
 		prop: obj_block3,
-		time: GAME_FPS * 1.6,
+		time: GAME_FPS * space1,
 	});
 	ds_list_add(wave23, {
 		prop: obj_block4,
-		time: GAME_FPS * 1.6,
+		time: GAME_FPS * space1,
 	});
 	ds_list_add(wave23, {
 		prop: obj_block1,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave23, {
 		prop: obj_pet,
-		time: GAME_FPS * 1.3,
+		time: GAME_FPS * space3,
 	});
 	ds_list_add(wave23, {
 		prop: obj_man,
-		time: GAME_FPS * 1.3,
+		time: 0,
 	});
 	#endregion	
 	

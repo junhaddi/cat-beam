@@ -16,8 +16,8 @@ global.stringBallCount = 0;
 global.mackerelCount = 0;
 
 // Parallax 배경 기본속도
-groundSpeed = -20;
-citySpeed = -12;
+groundSpeed = -14;
+citySpeed = -8;
 skySpeed = -4;
 
 // 웨이브

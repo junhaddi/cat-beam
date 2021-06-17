@@ -3,10 +3,10 @@ tag = Tag.Player;
 isDead = false;
 
 // 이동
-vspdMax = 28;
+vspdMax = 18;
 vspd = 0;
-grav = 1;
-jumpPower = -20;
+grav = 0.8;
+jumpPower = -18;
 
 jumpCountMax = 2;
 jumpCount = jumpCountMax;

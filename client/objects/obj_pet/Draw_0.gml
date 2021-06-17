@@ -3,6 +3,12 @@ switch (petKind) {
 	case 0:
 		playerSprite = spr_pet1;
 		break;
+	case 1:
+		playerSprite = spr_pet2;
+		break;
+	case 2:
+		playerSprite = spr_pet3;
+		break;
 }
 
 if (!isDead) {

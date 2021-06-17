@@ -27,6 +27,7 @@ switch (global.gameState) {
 	case GameState.InGame:
 		#region InGame
 		global.hp -= 1 / GAME_FPS;
+		global.gameSpeed += 1 / (GAME_FPS * 360);
 		
 		if (global.hp > 0) {
 			global.gameScore += 1;
@@ -55,7 +56,7 @@ switch (global.gameState) {
 						// 펫은 게임에서 딱 하나만 존재해야함
 						if (currentWave[| waveIndex].prop != obj_pet || !instance_exists(obj_pet)) {
 							var _layer;
-							var prop = instance_create_depth(GAME_WIDTH, GAME_HEIGHT - 100, 0, currentWave[| waveIndex].prop);
+							var prop = instance_create_depth(GAME_WIDTH, 620, 0, currentWave[| waveIndex].prop);
 							switch (prop.tag) {
 								case Tag.Enemy:
 									_layer = "layer_enemy";
@@ -95,6 +96,12 @@ switch (global.gameState) {
 				global.saveMap[? "highScore"] = global.gameHighScore;
 				scr_save(SAVE_FILE);
 			}
+			
+			currentWave = -1;
+			waveIndex = 0;
+			waveTimerMax = 0;
+			waveTimer = 0;
+			alarm[ManagerAlarm.Wave] = 0;
 		}
 		#endregion
 		break;
