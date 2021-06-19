@@ -1,16 +1,13 @@
 {
   "spriteId": {
-    "name": "spr_player1",
-    "path": "sprites/spr_player1/spr_player1.yy",
+    "name": "spr_beamButton",
+    "path": "sprites/spr_beamButton/spr_beamButton.yy",
   },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "par_button",
-    "path": "objects/par_button/par_button.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -24,20 +21,18 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":13,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [
     {"varType":1,"value":"0","rangeEnabled":true,"rangeMin":0.0,"rangeMax":2.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"kind","tags":[],"resourceType":"GMObjectProperty",},
   ],
   "overriddenProperties": [],
   "parent": {
-    "name": "01_Buttons",
-    "path": "folders/Objects/300_UI/01_Buttons.yy",
+    "name": "Button",
+    "path": "folders/Objects/300_UI/Button.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_playerSelect",
+  "name": "obj_beamButton",
   "tags": [],
   "resourceType": "GMObject",
 }

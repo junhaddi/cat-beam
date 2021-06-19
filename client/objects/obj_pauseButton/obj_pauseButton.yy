@@ -1,10 +1,10 @@
 {
   "spriteId": {
-    "name": "spr_player1",
-    "path": "sprites/spr_player1/spr_player1.yy",
+    "name": "spr_pauseButton",
+    "path": "sprites/spr_pauseButton/spr_pauseButton.yy",
   },
   "solid": false,
-  "visible": true,
+  "visible": false,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
@@ -23,11 +23,7 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":13,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-  ],
+  "eventList": [],
   "properties": [
     {"varType":1,"value":"0","rangeEnabled":true,"rangeMin":0.0,"rangeMax":2.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"kind","tags":[],"resourceType":"GMObjectProperty",},
   ],
@@ -37,7 +33,7 @@
     "path": "folders/Objects/300_UI/01_Buttons.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_playerSelect",
+  "name": "obj_pauseButton",
   "tags": [],
   "resourceType": "GMObject",
 }

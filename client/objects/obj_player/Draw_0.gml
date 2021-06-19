@@ -14,7 +14,20 @@ switch (global.playerKind) {
 if (!isDead) {
 	var _w = random_range(0.8, 1.2);
 	var _h = random_range(0.8, 1.2);
-	var _a = instance_exists(obj_pet) ? 1 : (isDamaged ? 0.5 : 1);
+	var _a;
+	if (instance_exists(obj_pet)) {
+		if (obj_pet.isDead) {
+			_a = 0.5;
+		} else {
+			_a = 1;
+		}
+	} else {
+		if (isDamaged) {
+			_a = 0.5;
+		} else {
+			_a = 1;
+		}
+	}
 	draw_sprite_ext(playerSprite, -1, x, y, _w, _h, 0, c_white, _a);
 
 	// 고양이빔

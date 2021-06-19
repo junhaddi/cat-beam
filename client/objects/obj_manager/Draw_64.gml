@@ -17,6 +17,11 @@ switch (global.gameState) {
 		break;
 	case GameState.InGame:
 		#region InGame
+		// 키입력
+		draw_sprite(spr_jumpButton, -1, obj_jumpButton.x, obj_jumpButton.y);
+		draw_sprite(spr_beamButton, -1, obj_beamButton.x, obj_beamButton.y);
+		draw_sprite(spr_pauseButton, -1, obj_pauseButton.x, obj_pauseButton.y);
+		
 		// 점수
 		var scoreText = "점수: " + string(global.gameScore);
 		draw_set_color(c_black);
@@ -39,11 +44,14 @@ switch (global.gameState) {
 		}
 
 		// 체력바
-		var hpbarX = GAME_WIDTH / 2 - hpbarSpriteWidth / 2;
-		var hpbarY = 30;
-
+		var hpbarX = GAME_WIDTH / 2;
+		var hpbarY = 60;
 		draw_sprite(spr_hpbar, 0, hpbarX, hpbarY);
-		draw_sprite_part(spr_hpbar, 1, 0, 0, hpbarWidth, hpbarSpriteHeight, hpbarX, hpbarY);
+		draw_sprite_part(spr_hpbar, 1, 0, 0, hpbarWidth, hpbarSpriteHeight, hpbarX - hpbarSpriteWidth / 2, hpbarY - hpbarSpriteHeight / 2);
+		
+		// 체력바 핀
+		draw_sprite(spr_hpbarPin, 0, hpbarX - hpbarSpriteWidth / 2 + hpbarWidth, hpbarY);
+
 		#endregion
 		break;
 	case GameState.GameOver:

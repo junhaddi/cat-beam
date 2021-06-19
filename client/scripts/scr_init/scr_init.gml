@@ -617,6 +617,8 @@ function scr_init() {
 	}
 
 	// 게임 기본설정
+	device_mouse_dbclick_enable(false);
+	
 	draw_set_font(font_general);
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top)
