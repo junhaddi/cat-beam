@@ -1,0 +1,1 @@
+global.gameScore += _score;

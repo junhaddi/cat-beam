@@ -61,7 +61,7 @@ switch (global.gameState) {
 			//	}
 			//}
 			
-			global.gameScore += 1;
+			global.gameScore += 5;
 			
 			// Parallax 배경 속도설정
 			layer_hspeed("bg_ground", groundSpeed * global.gameSpeed);
