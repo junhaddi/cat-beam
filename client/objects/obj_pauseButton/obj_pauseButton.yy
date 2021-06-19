@@ -1,15 +1,15 @@
 {
-  "spriteId": {
+  "spriteId": null,
+  "solid": false,
+  "visible": true,
+  "spriteMaskId": {
     "name": "spr_pauseButton",
     "path": "sprites/spr_pauseButton/spr_pauseButton.yy",
   },
-  "solid": false,
-  "visible": false,
-  "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "par_button",
-    "path": "objects/par_button/par_button.yy",
+    "name": "par_inGame",
+    "path": "objects/par_inGame/par_inGame.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -23,14 +23,16 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [],
+  "eventList": [
+    {"isDnD":false,"eventNum":64,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+  ],
   "properties": [
     {"varType":1,"value":"0","rangeEnabled":true,"rangeMin":0.0,"rangeMax":2.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"kind","tags":[],"resourceType":"GMObjectProperty",},
   ],
   "overriddenProperties": [],
   "parent": {
-    "name": "01_Buttons",
-    "path": "folders/Objects/300_UI/01_Buttons.yy",
+    "name": "02_InGame",
+    "path": "folders/Objects/300_UI/02_InGame.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_pauseButton",

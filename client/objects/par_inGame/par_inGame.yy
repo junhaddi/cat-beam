@@ -2,14 +2,11 @@
   "spriteId": null,
   "solid": false,
   "visible": true,
-  "spriteMaskId": {
-    "name": "spr_beamButton",
-    "path": "sprites/spr_beamButton/spr_beamButton.yy",
-  },
+  "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "par_inGame",
-    "path": "objects/par_inGame/par_inGame.yy",
+    "name": "par_ui",
+    "path": "objects/par_ui/par_ui.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -24,7 +21,7 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":64,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [
     {"varType":1,"value":"0","rangeEnabled":true,"rangeMin":0.0,"rangeMax":2.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"kind","tags":[],"resourceType":"GMObjectProperty",},
@@ -35,7 +32,7 @@
     "path": "folders/Objects/300_UI/02_InGame.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_beamButton",
+  "name": "par_inGame",
   "tags": [],
   "resourceType": "GMObject",
 }

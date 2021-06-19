@@ -26,11 +26,9 @@
   "frames": [
     {"compositeImage":{"FrameId":{"name":"66c4a78f-b7cd-43ee-94d5-3c1ad6e7fbe0","path":"sprites/spr_hpbar/spr_hpbar.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"66c4a78f-b7cd-43ee-94d5-3c1ad6e7fbe0","path":"sprites/spr_hpbar/spr_hpbar.yy",},"LayerId":{"name":"301ae531-9e5d-4c22-bb8c-10dd79ff2081","path":"sprites/spr_hpbar/spr_hpbar.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"66c4a78f-b7cd-43ee-94d5-3c1ad6e7fbe0","path":"sprites/spr_hpbar/spr_hpbar.yy",},"LayerId":{"name":"7448f308-3e08-4b33-8fdc-c17d7bf51672","path":"sprites/spr_hpbar/spr_hpbar.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr_hpbar","path":"sprites/spr_hpbar/spr_hpbar.yy",},"resourceVersion":"1.0","name":"66c4a78f-b7cd-43ee-94d5-3c1ad6e7fbe0","tags":[],"resourceType":"GMSpriteFrame",},
     {"compositeImage":{"FrameId":{"name":"35504021-8186-448a-afc4-5864f19bffbe","path":"sprites/spr_hpbar/spr_hpbar.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"35504021-8186-448a-afc4-5864f19bffbe","path":"sprites/spr_hpbar/spr_hpbar.yy",},"LayerId":{"name":"301ae531-9e5d-4c22-bb8c-10dd79ff2081","path":"sprites/spr_hpbar/spr_hpbar.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"35504021-8186-448a-afc4-5864f19bffbe","path":"sprites/spr_hpbar/spr_hpbar.yy",},"LayerId":{"name":"7448f308-3e08-4b33-8fdc-c17d7bf51672","path":"sprites/spr_hpbar/spr_hpbar.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr_hpbar","path":"sprites/spr_hpbar/spr_hpbar.yy",},"resourceVersion":"1.0","name":"35504021-8186-448a-afc4-5864f19bffbe","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
@@ -75,8 +73,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "300_UI",
-    "path": "folders/Sprites/300_UI.yy",
+    "name": "02_InGame",
+    "path": "folders/Sprites/300_UI/02_InGame.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_hpbar",

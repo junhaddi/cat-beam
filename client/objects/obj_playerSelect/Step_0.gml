@@ -1,7 +1,7 @@
 if (global.gameState == GameState.PlayerSelect) {
 	if (position_meeting(mouse_x, mouse_y, self)) {
 		// Mouse Enter
-		imageScale = 1.2;
+		var imageScale = 1.2;
 		image_xscale = scr_ease(image_xscale, imageScale);
 		image_yscale = scr_ease(image_yscale, imageScale);
 	} else {
@@ -13,3 +13,4 @@ if (global.gameState == GameState.PlayerSelect) {
 } else {
 	visible = false;
 }
+

@@ -5,8 +5,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "par_ui",
-    "path": "objects/par_ui/par_ui.yy",
+    "name": "par_mainMenu",
+    "path": "objects/par_mainMenu/par_mainMenu.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -21,16 +21,14 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [],
-  "properties": [
-    {"varType":1,"value":"0","rangeEnabled":true,"rangeMin":0.0,"rangeMax":2.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"kind","tags":[],"resourceType":"GMObjectProperty",},
-  ],
+  "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "01_Buttons",
-    "path": "folders/Objects/300_UI/01_Buttons.yy",
+    "name": "01_MainMenu",
+    "path": "folders/Objects/300_UI/01_MainMenu.yy",
   },
   "resourceVersion": "1.0",
-  "name": "par_button",
+  "name": "obj_logo",
   "tags": [],
   "resourceType": "GMObject",
 }

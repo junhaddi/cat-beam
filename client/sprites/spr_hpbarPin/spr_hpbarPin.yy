@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "300_UI",
-    "path": "folders/Sprites/300_UI.yy",
+    "name": "02_InGame",
+    "path": "folders/Sprites/300_UI/02_InGame.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_hpbarPin",

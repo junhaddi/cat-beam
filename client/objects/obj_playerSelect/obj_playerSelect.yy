@@ -8,8 +8,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "par_button",
-    "path": "objects/par_button/par_button.yy",
+    "name": "par_inGame",
+    "path": "objects/par_inGame/par_inGame.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -33,8 +33,8 @@
   ],
   "overriddenProperties": [],
   "parent": {
-    "name": "01_Buttons",
-    "path": "folders/Objects/300_UI/01_Buttons.yy",
+    "name": "300_UI",
+    "path": "folders/Objects/300_UI.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_playerSelect",

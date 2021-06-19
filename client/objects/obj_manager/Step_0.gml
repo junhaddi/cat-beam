@@ -35,32 +35,6 @@ switch (global.gameState) {
 		}
 	
 		if (global.hp > 0) {
-			// 터치(모바일) 입력
-			//var touchs = [obj_jumpButton, obj_beamButton, obj_pauseButton];
-			//var isTouchs = [false, false, false];
-			//for (var i = 0; i < 4; i++) {
-			//	if (device_mouse_check_button(i, mb_left)) {
-			//		for (var j = 0; j < array_length(touchs); j++) {
-			//			var touch = touchs[j];
-						
-			//			if (device_mouse_x(i) >= touch.bbox_left && device_mouse_x(i) <= touch.bbox_right && 
-			//				device_mouse_y(i) >= touch.bbox_top && device_mouse_y(i) <= touch.bbox_bottom) {
-			//				switch (touch) {
-			//					case obj_jumpButton:
-			//						show_debug_message("JUMP");
-			//						break;
-			//					case obj_beamButton:
-			//						show_debug_message("BEAM");
-			//						break;
-			//					case obj_pauseButton:
-			//						show_debug_message("PAUSE");
-			//						break;
-			//				}
-			//			}
-			//		}
-			//	}
-			//}
-			
 			global.gameScore += 5;
 			
 			// Parallax 배경 속도설정
@@ -69,7 +43,7 @@ switch (global.gameState) {
 			layer_hspeed("bg_sky", skySpeed * global.gameSpeed);
 
 			// 게임 일시정지
-			if (keyboard_check_pressed(vk_escape)) {
+			if (keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_backspace)) {
 				layer_hspeed("bg_ground", 0);
 				layer_hspeed("bg_city", 0);
 				layer_hspeed("bg_sky", 0);

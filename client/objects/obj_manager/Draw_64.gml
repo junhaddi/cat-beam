@@ -2,7 +2,7 @@ switch (global.gameState) {
 	case GameState.MainMenu:
 		#region MainMenu
 		draw_set_halign(fa_center);
-		draw_sprite(spr_logo, -1, GAME_CENTER, 300);
+		draw_sprite(spr_logo, 0, GAME_CENTER, 300);
 		draw_text(GAME_CENTER, GAME_HEIGHT - 300, "아무키나 눌러서 지구정복");
 		draw_set_halign(fa_left);
 		#endregion
@@ -17,30 +17,23 @@ switch (global.gameState) {
 		break;
 	case GameState.InGame:
 		#region InGame
-		// 키입력
-		draw_sprite(spr_jumpButton, -1, obj_jumpButton.x, obj_jumpButton.y);
-		draw_sprite(spr_beamButton, -1, obj_beamButton.x, obj_beamButton.y);
-		draw_sprite(spr_pauseButton, -1, obj_pauseButton.x, obj_pauseButton.y);
-		
 		// 점수
-		var scoreText = "점수: " + string(global.gameScore);
+		var scoreTextX = GAME_CENTER;
+		var scoreTextY = 100;
+		var scoreText = string(global.gameScore);
 		draw_set_color(c_black);
-		draw_text(40, 40, scoreText);
+		draw_set_halign(fa_center);
+		draw_text(scoreTextX + 1, scoreTextY, scoreText);
+		draw_text(scoreTextX - 1, scoreTextY, scoreText);
+		draw_text(scoreTextX, scoreTextY + 1, scoreText);
+		draw_text(scoreTextX, scoreTextY - 1, scoreText);
 		draw_set_color(c_white);
-
-		// 실뭉치
-		draw_set_color(c_black);
-		draw_set_alpha(0.5);
-		draw_rectangle(30, 106, 200, 180, false);
-		draw_set_alpha(1);
-		draw_set_color(c_white);
-
-		draw_sprite_ext(spr_stringBall, 0, 40, 180, 0.15, 0.15, 0, c_white, 1);
-		draw_text(130, 125, global.stringBallCount);
+		draw_text(scoreTextX, scoreTextY, scoreText);
+		draw_set_halign(fa_left);
 
 		// 고등어
 		for (var i = 0; i < global.mackerelCount; i++) {
-			draw_sprite_ext(spr_mackerel, 0, 180 + i * 30, 140, 0.1, 0.1, 315, c_white, 1);
+			draw_sprite_ext(spr_mackerel, 0, 30 + i * 40, 50, 0.4, 0.4, 315, c_white, 1);
 		}
 
 		// 체력바
