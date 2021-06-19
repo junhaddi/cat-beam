@@ -7,29 +7,14 @@ switch (global.gameState) {
 		draw_set_halign(fa_left);
 		#endregion
 		break;
-	case GameState.PlayerSelect:
-		#region PlayerSelect
-		#endregion
-		break;
 	case GameState.Tutorial:
-		#region Tutorial
-		#endregion
-		break;
 	case GameState.InGame:
-		#region InGame
+		#region Tutorial, InGame
 		// 점수
 		var scoreTextX = GAME_CENTER;
 		var scoreTextY = 100;
 		var scoreText = string(global.gameScore);
-		draw_set_color(c_black);
-		draw_set_halign(fa_center);
-		draw_text(scoreTextX + 1, scoreTextY, scoreText);
-		draw_text(scoreTextX - 1, scoreTextY, scoreText);
-		draw_text(scoreTextX, scoreTextY + 1, scoreText);
-		draw_text(scoreTextX, scoreTextY - 1, scoreText);
-		draw_set_color(c_white);
-		draw_text(scoreTextX, scoreTextY, scoreText);
-		draw_set_halign(fa_left);
+		scr_drawTextBorder(scoreTextX, scoreTextY, scoreText, c_black, 2);
 
 		// 고등어
 		for (var i = 0; i < global.mackerelCount; i++) {

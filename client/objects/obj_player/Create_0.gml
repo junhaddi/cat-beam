@@ -10,6 +10,7 @@ jumpPower = -18;
 
 jumpCountMax = 2;
 jumpCount = jumpCountMax;
+isGround = false;
 
 // 공격
 isBeam = false;

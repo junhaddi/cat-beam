@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "01_MainMenu",
-    "path": "folders/Sprites/300_UI/01_MainMenu.yy",
+    "name": "01_MainMenus",
+    "path": "folders/Sprites/300_UI/01_MainMenus.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_logo",

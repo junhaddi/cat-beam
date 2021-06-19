@@ -4,8 +4,8 @@ function scr_pet() {
 	var key_beam = false; 
 	
 	if (!isDead) {
-		key_jump = keyboard_check_pressed(vk_up);
-		key_beam = keyboard_check(vk_down);
+		key_jump = keyboard_check_pressed(vk_up) || global.isTouchs[Touch.Jump];
+		key_beam = keyboard_check(vk_down) || global.isTouchs[Touch.Beam];
 	}
 	
 	// 중력 가속도

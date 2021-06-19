@@ -8,8 +8,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "par_inGame",
-    "path": "objects/par_inGame/par_inGame.yy",
+    "name": "par_playerSelect",
+    "path": "objects/par_playerSelect/par_playerSelect.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -33,8 +33,8 @@
   ],
   "overriddenProperties": [],
   "parent": {
-    "name": "300_UI",
-    "path": "folders/Objects/300_UI.yy",
+    "name": "03_PlayerSelects",
+    "path": "folders/Objects/300_UI/03_PlayerSelects.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_playerSelect",

@@ -4,6 +4,6 @@ if (!isDead) {
 	} else {
 		global.hp += other.heal;
 	}
-
+	global.gameScore += other._score;
 	instance_destroy(other);
 }

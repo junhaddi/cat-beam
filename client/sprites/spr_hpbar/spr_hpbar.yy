@@ -73,8 +73,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "02_InGame",
-    "path": "folders/Sprites/300_UI/02_InGame.yy",
+    "name": "04_InGames",
+    "path": "folders/Sprites/300_UI/04_InGames.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_hpbar",

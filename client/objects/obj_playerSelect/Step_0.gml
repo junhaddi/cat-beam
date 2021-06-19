@@ -13,4 +13,3 @@ if (global.gameState == GameState.PlayerSelect) {
 } else {
 	visible = false;
 }
-

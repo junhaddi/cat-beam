@@ -24,8 +24,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "01_MainMenu",
-    "path": "folders/Objects/300_UI/01_MainMenu.yy",
+    "name": "01_MainMenus",
+    "path": "folders/Objects/300_UI/01_MainMenus.yy",
   },
   "resourceVersion": "1.0",
   "name": "par_mainMenu",

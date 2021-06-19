@@ -4,13 +4,15 @@ function scr_player() {
 	var key_beam = false; 
 	
 	if (!isDead) {
-		key_jump = keyboard_check_pressed(vk_up);
-		key_beam = keyboard_check(vk_down);
+		key_jump = keyboard_check_pressed(vk_up) || global.isTouchs[Touch.Jump];
+		key_beam = keyboard_check(vk_down) || global.isTouchs[Touch.Beam];
 	}
 	
 	// 중력 가속도
-	vspd += grav * global.gameSpeed;
-	vspd = clamp(vspd, -vspdMax, vspdMax);
+	if (!global.isStop) {
+		vspd += grav * global.gameSpeed;
+		vspd = clamp(vspd, -vspdMax, vspdMax);
+	}
 	
 	// 점프
 	if (key_jump && jumpCount > 0 && (jumpCount == jumpCountMax ? place_meeting(x, y + 1, obj_solid) : true)) {
@@ -59,7 +61,13 @@ function scr_player() {
 			}
 			vspd = 0;
 			jumpCount = jumpCountMax;
+			isGround = true;
+		} else {
+			isGround = false;
 		}
 	}
-	y += vspd;
+	
+	if (!global.isStop) {
+		y += vspd;
+	}
 }

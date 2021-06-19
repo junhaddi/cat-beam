@@ -1,3 +1,5 @@
+event_inherited();
+
 switch (kind) {
 	case 0:
 		sprite_index = spr_player1;

@@ -4,121 +4,160 @@ switch (global.gameState) {
 		// Parallax 배경 속도설정
 		layer_hspeed("bg_ground", groundSpeed);
 		layer_hspeed("bg_city", citySpeed);
-		layer_hspeed("bg_sky", skySpeed);
+		layer_hspeed("bg_cloud", skySpeed);
 		
 		// 게임시작
-		if (keyboard_check_pressed(vk_anykey) || mouse_check_button_pressed(mb_any)) {
-			global.gameState = GameState.PlayerSelect;
+		if (keyboard_check_pressed(vk_anykey) || mouse_check_button_pressed(mb_left)) {
+			// TODO 튜토리얼 정보 값 저장
+			//global.gameState = GameState.PlayerSelect;
+			
+			global.gameState = GameState.Tutorial;
+			instance_create_layer(0, 0, "layer_inst", obj_tutorial);
+			scr_setPlayer(0);
 		}
-		#endregion
-		break;
-	case GameState.PlayerSelect:
-		#region PlayerSelect
-		// Parallax 배경 속도설정
-		layer_hspeed("bg_ground", groundSpeed);
-		layer_hspeed("bg_city", citySpeed);
-		layer_hspeed("bg_sky", skySpeed);
 		#endregion
 		break;
 	case GameState.Tutorial:
-		#region Tutorial
-		#endregion
-		break;
 	case GameState.InGame:
-		#region InGame
-		if (global.isFever) {
-			global.gameSpeed = global._gameSpeed * 3;
-		} else {
-			global.hp -= 1 / GAME_FPS;
-			global.gameSpeed += 1 / (GAME_FPS * 360);
-			global._gameSpeed = global.gameSpeed;
-		}
-	
-		if (global.hp > 0) {
-			global.gameScore += 5;
-			
-			// Parallax 배경 속도설정
-			layer_hspeed("bg_ground", groundSpeed * global.gameSpeed);
-			layer_hspeed("bg_city", citySpeed * global.gameSpeed);
-			layer_hspeed("bg_sky", skySpeed * global.gameSpeed);
-
-			// 게임 일시정지
-			if (keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_backspace)) {
-				layer_hspeed("bg_ground", 0);
-				layer_hspeed("bg_city", 0);
-				layer_hspeed("bg_sky", 0);
-				instance_create_layer(0, 0, "layer_inst", obj_pause);
-			}
-			
-			// 웨이브 발생
-			if (alarm[ManagerAlarm.Wave] == -1) {
-				alarm[ManagerAlarm.Wave] = GAME_FPS * 2;
-			}
-
-			if (currentWave != -1) {
-				waveTimer++;
-				if (waveTimer >= waveTimerMax) {
-					if (waveIndex < ds_list_size(currentWave)) {
-						// 펫은 게임에서 딱 하나만 존재해야함
-						if (currentWave[| waveIndex].prop != obj_pet || !instance_exists(obj_pet)) {
-							var _layer;
-							var prop = instance_create_depth(GAME_WIDTH, 620, 0, currentWave[| waveIndex].prop);
-							switch (prop.tag) {
-								case Tag.Enemy:
-									_layer = "layer_enemy";
-									break;
-								case Tag.Block:
-									_layer = "layer_block";
-									break;
-								case Tag.Item:
-									_layer = "layer_item";
-									break;
-								case Tag.Pet:
-									_layer = "layer_inst";
-									break;
-							}
-							prop.layer = layer_get_id(_layer);
+		#region Tutorial, InGame
+		// 터치(모바일) 입력
+		global.isTouchs = [false, false, false];
+		var touchs = [obj_jumpButton, obj_beamButton, obj_pauseButton];
+		var fingerMax = 4;
+		for (var i = 0; i < fingerMax; i++) {
+			for (var j = 0; j < array_length(touchs); j++) {
+				var button = touchs[j];
+				if (device_mouse_check_button(i, mb_left)) {
+					if (device_mouse_x(i) >= button.bbox_left && device_mouse_x(i) <= button.bbox_right &&
+						device_mouse_y(i) >= button.bbox_top && device_mouse_y(i) <= button.bbox_bottom) {
+						switch (button) {
+							case obj_jumpButton:
+								if (!button.isPressed) {
+									global.isTouchs[Touch.Jump] = true;
+								}
+								break;
+							case obj_beamButton:
+								global.isTouchs[Touch.Beam] = true;
+								break;
+							case obj_pauseButton:
+								global.isTouchs[Touch.Pause] = true;
+								break;
 						}
-						waveTimerMax = currentWave[| waveIndex].time;
-						waveIndex++;
+						button.isBoundary = true;
+						button.isPressed = true;
 					} else {
-						currentWave = -1;
-						waveIndex = 0;
-						waveTimerMax = 0;
+						button.isBoundary = false;
 					}
-					waveTimer = 0;
 				}
-			}
-			
-			// 피버타임
-			if (global.mackerelCount >= 5) {
-				global.isFever = true;
-				global.mackerelCount = 0;
-				alarm[ManagerAlarm.Fever] = GAME_FPS * 10;
 				
-				repeat(6) {
-					instance_create_layer(random_range(obj_player.x - 200, obj_player.x + 200), 0, "layer_inst", obj_fever);
+				if (device_mouse_check_button_released(i, mb_left)) {
+					button.isBoundary = false;
+					button.isPressed = false;
 				}
 			}
-	
-			// Draw
-			hpbarWidth = scr_ease(hpbarWidth, hpbarSpriteWidth * (global.hp / global.hpMax));
-		} else {
-			// 플레이어 사망
-			global.gameState = GameState.GameOver;
+		}
+		
+		// 게임 일시정지
+		if (keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_backspace) || global.isTouchs[Touch.Pause]) {
+			layer_hspeed("bg_ground", 0);
+			layer_hspeed("bg_city", 0);
+			layer_hspeed("bg_cloud", 0);
+			instance_create_layer(0, 0, "layer_inst", obj_pause);
+		}
+				
+		if (!global.isStop) {
+			if (global.hp > 0) {
+				layer_hspeed("bg_ground", groundSpeed * global.gameSpeed);
+				layer_hspeed("bg_city", citySpeed * global.gameSpeed);
+				layer_hspeed("bg_cloud", skySpeed * global.gameSpeed);
+				
+				if (global.gameState == GameState.InGame) {
+					global.gameScore += 5;
+				}
 
-			// 신기록 달성
-			if (global.gameScore > global.gameHighScore) {
-				global.gameHighScore = global.gameScore;
-				global.saveMap[? "highScore"] = global.gameHighScore;
-				scr_save(SAVE_FILE);
-			}
+				if (global.isFever) {
+					// 피버타임
+					global.gameSpeed = global._gameSpeed * 3;
+				} else {
+					global.hp -= 1 / GAME_FPS;
+					global.gameSpeed += 1 / (GAME_FPS * 360);
+					global._gameSpeed = global.gameSpeed;
+				}
+				
+				// 웨이브 발생
+				if (alarm[ManagerAlarm.Wave] == -1 && !instance_exists(obj_tutorial)) {
+					alarm[ManagerAlarm.Wave] = GAME_FPS * 2;
+				}
 			
-			currentWave = -1;
-			waveIndex = 0;
-			waveTimerMax = 0;
-			waveTimer = 0;
-			alarm[ManagerAlarm.Wave] = 0;
+				if (currentWave != -1) {
+					waveTimer++;
+					if (waveTimer >= waveTimerMax) {
+						if (waveIndex < ds_list_size(currentWave)) {
+							// 펫은 게임에서 딱 하나만 존재해야함
+							if (currentWave[| waveIndex].prop != obj_pet || !instance_exists(obj_pet)) {
+								var _layer;
+								var prop = scr_createProp(currentWave[| waveIndex].prop);
+								switch (prop.tag) {
+									case Tag.Enemy:
+										_layer = "layer_enemy";
+										break;
+									case Tag.Block:
+										_layer = "layer_block";
+										break;
+									case Tag.Item:
+										_layer = "layer_item";
+										break;
+									case Tag.Pet:
+										_layer = "layer_inst";
+										break;
+								}
+								prop.layer = layer_get_id(_layer);
+							}
+							waveTimerMax = currentWave[| waveIndex].time;
+							waveIndex++;
+						} else {
+							currentWave = -1;
+							waveIndex = 0;
+							waveTimerMax = 0;
+						}
+						waveTimer = 0;
+					}
+				}
+				
+				// 피버타임
+				if (global.mackerelCount >= 5) {
+					global.isFever = true;
+					global.mackerelCount = 0;
+					alarm[ManagerAlarm.Fever] = GAME_FPS * 10;
+					
+					repeat(6) {
+						instance_create_layer(random_range(obj_player.x - 200, obj_player.x + 200), 0, "layer_inst", obj_fever);
+					}
+				}
+			
+				// Draw
+				hpbarWidth = scr_ease(hpbarWidth, hpbarSpriteWidth * (global.hp / global.hpMax));
+			} else {
+				// 플레이어 사망
+				global.gameState = GameState.GameOver;
+				
+				// 신기록 달성
+				if (global.gameScore > global.gameHighScore) {
+					global.gameHighScore = global.gameScore;
+					global.saveMap[? "highScore"] = global.gameHighScore;
+					scr_save(SAVE_FILE);
+				}
+				
+				currentWave = -1;
+				waveIndex = 0;
+				waveTimerMax = 0;
+				waveTimer = 0;
+				alarm[ManagerAlarm.Wave] = 0;
+			}
+		} else {
+			layer_hspeed("bg_ground", 0);
+			layer_hspeed("bg_city", 0);
+			layer_hspeed("bg_cloud", 0);
 		}
 		#endregion
 		break;

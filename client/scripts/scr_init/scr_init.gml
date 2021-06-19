@@ -6,19 +6,26 @@ function scr_init() {
 	#macro GAME_HEIGHT 720
 	#macro GAME_CENTER 640
 	#macro GAME_MIDDLE 360
-	
+
 	enum Tag {
 		Player,
 		Enemy,
 		Block,
 		Item,
 		Pet,
+		UI,
+	}
+	
+	enum Touch {
+		Jump,
+		Beam,
+		Pause,
 	}
 	
 	enum GameState {
 		MainMenu,
-		PlayerSelect,
 		Tutorial,
+		PlayerSelect,
 		InGame,
 		GameOver,
 	};
@@ -26,6 +33,15 @@ function scr_init() {
 	enum ManagerAlarm {
 		Wave,
 		Fever,
+	};
+	
+	enum Tutorial {
+		Hello,
+		BlockLow,
+		BlockHigh,
+		Enemy,
+		Ciao,
+		Items,
 	};
 	
 	enum PlayerAlarm {
@@ -621,7 +637,7 @@ function scr_init() {
 	
 	draw_set_font(font_general);
 	draw_set_halign(fa_left);
-	draw_set_valign(fa_top)
+	draw_set_valign(fa_top);
 	
 	// 배경음악 재생
 	//audio_play_sound(bgm_game1, 10, true);
