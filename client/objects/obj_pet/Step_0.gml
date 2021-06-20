@@ -10,7 +10,7 @@ if (isRescue) {
 	}
 
 	if (isBeam) {
-		beamThickness = scr_ease(beamThickness, beamThicknessMax + random(10));
+		beamThickness = scr_ease(beamThickness, beamThicknessMax + random(5));
 	} else {
 		beamThickness = scr_ease(beamThickness, 0);
 	}

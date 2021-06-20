@@ -31,8 +31,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "100_Player",
-    "path": "folders/Objects/100_Player.yy",
+    "name": "100_Players",
+    "path": "folders/Objects/100_Players.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_fever",

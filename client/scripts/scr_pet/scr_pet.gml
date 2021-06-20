@@ -54,6 +54,9 @@ function scr_pet() {
 			}
 			vspd = 0;
 			jumpCount = jumpCountMax;
+			isGround = true;
+		} else {
+			isGround = false;
 		}
 	}
 	y += vspd;

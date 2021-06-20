@@ -13,7 +13,7 @@ switch (global.gameState) {
 				global.isInputsEnabled = [true, true, true];
 			} else {
 				global.gameState = GameState.Tutorial;
-				global.isInputsEnabled = [false, false, false];
+				global.isInputsEnabled = [false, false, true];
 				instance_create_layer(0, 0, "layer_above", obj_tutorial);
 				scr_setPlayer(0);
 			}
@@ -75,7 +75,7 @@ switch (global.gameState) {
 					alarm[ManagerAlarm.Fever] = GAME_FPS * 10;
 					
 					repeat(6) {
-						instance_create_layer(random_range(obj_player.x - 200, obj_player.x + 200), 0, "layer_inst", obj_fever);
+						instance_create_layer(random_range(obj_player.x - 200, obj_player.x + 200), 0, "layer_player", obj_fever);
 					}
 				}
 			
@@ -128,7 +128,7 @@ switch (global.gameState) {
 		break;
 }
 		
-// 디버그
+#region 개발자 모드
 if (keyboard_check_pressed(vk_f1)) {
 	global.hp = global.hpMax;
 }
@@ -158,14 +158,20 @@ if (keyboard_check_pressed(vk_f7)) {
 	scr_save(SAVE_FILE);
 }
 
-//if (keyboard_check_pressed(vk_left)) {
+if (keyboard_check_pressed(vk_f8)) {
+	scr_createProp(obj_pet);
+}
+
+// TODO 리더보드
+//if (keyboard_check_pressed(vk_f11)) {
 //	// 불러오기
 //	http_get(SERVER_URL + "/leaderboards");
 //}
 
-//if (keyboard_check_pressed(vk_right)) {
+//if (keyboard_check_pressed(vk_f12)) {
 //	// 저장(한글 입력시 버그) 바디파서 공부
 //	var name = get_string("이름을 적어주세요", "Anonymous");
 //	var query = "name=" + name + "&score=" + string(global.gameHighScore);
 //	http_post_string(SERVER_URL + "/leaderboards?" + query, query);
 //}
+#endregion

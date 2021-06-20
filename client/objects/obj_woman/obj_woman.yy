@@ -30,7 +30,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "01_Enemys",
-    "path": "folders/Objects/200_props/01_Enemys.yy",
+    "path": "folders/Objects/200_Props/01_Enemys.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_woman",

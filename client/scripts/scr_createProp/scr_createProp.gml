@@ -15,8 +15,8 @@ function scr_createProp(object) {
 			_layer = "layer_item";
 			break;
 		case Tag.Pet:
-			_y = 544;
-			_layer = "layer_inst";
+			_y = 572;
+			_layer = "layer_pet";
 			break;
 	}
 	prop.x = GAME_WIDTH + sprite_get_xoffset(prop.sprite_index);

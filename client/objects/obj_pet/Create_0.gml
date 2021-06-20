@@ -4,6 +4,7 @@ isRescue = false;
 petKind = irandom(2);
 
 isDead = false;
+state = "run";
 
 // 이동
 vspdMax = 24;
@@ -13,12 +14,13 @@ jumpPower = -24;
 
 jumpCountMax = 2;
 jumpCount = jumpCountMax;
+isGround = false;
 
 // 공격
 isBeam = false;
 isBeamStraight = false;
-beamOffsetX = 80;
-beamOffsetY = -32;
+beamOffsetX = 15;
+beamOffsetY = 6;
 beamRangeMax = GAME_WIDTH - 800;
 beamRange = 0;
 beamThicknessMax = 12;

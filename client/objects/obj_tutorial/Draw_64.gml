@@ -18,7 +18,7 @@ if (isItems) {
 	
 	draw_text(GAME_CENTER + 280, GAME_MIDDLE - 100, "생선");
 	draw_sprite(spr_mackerel, 0, GAME_CENTER + 280, GAME_MIDDLE);
-	draw_text_transformed(GAME_CENTER + 280, GAME_MIDDLE + 100, "5개를 모으 시 피버타임 발동!\n(날생성은 1개, 구운 생선은 3개)", 0.6, 0.6, 0);
+	draw_text_transformed(GAME_CENTER + 280, GAME_MIDDLE + 100, "5개를 모을 시 피버타임 발동!\n(날 생선은 1개, 구운 생선은 3개)", 0.6, 0.6, 0);
 		
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);

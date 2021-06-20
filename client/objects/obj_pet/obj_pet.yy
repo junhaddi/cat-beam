@@ -1,11 +1,14 @@
 {
   "spriteId": {
-    "name": "spr_pet1",
-    "path": "sprites/spr_pet1/spr_pet1.yy",
+    "name": "spr_player1_run",
+    "path": "sprites/spr_player1_run/spr_player1_run.yy",
   },
   "solid": false,
   "visible": true,
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "mask_player",
+    "path": "sprites/mask_player/mask_player.yy",
+  },
   "persistent": false,
   "parentObjectId": {
     "name": "par_pet",
@@ -32,7 +35,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "04_Pets",
-    "path": "folders/Objects/200_props/04_Pets.yy",
+    "path": "folders/Objects/200_Props/04_Pets.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_pet",

@@ -34,20 +34,7 @@ playerSprite = asset_get_index(_playerSprite + "_" + state);
 image_speed = !global.isStop ? global.gameSpeed : 0;
 
 if (!isDead) {
-	var alpha;
-	if (instance_exists(obj_pet)) {
-		if (obj_pet.isDead) {
-			alpha = 0.5;
-		} else {
-			alpha = 1;
-		}
-	} else {
-		if (isDamaged) {
-			alpha = 0.5;
-		} else {
-			alpha = 1;
-		}
-	}
+	var alpha = global.petHp > 0 ? 1 : (isDamaged ? 0.5 : 1);
 	draw_sprite_ext(playerSprite, -1, x, y, 1, 1, state == "roll" ? -current_time * global._gameSpeed : 0, c_white, alpha);
 
 	// 고양이빔

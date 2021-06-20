@@ -35,7 +35,7 @@ waveTimerMax = 0;
 waveTimer = 0;
 
 isCanGameOver = false;
-gameOverDelayTime = GAME_FPS * 0.5;
+gameOverDelayTime = GAME_FPS * 2;
 
 // Draw
 hpbarSpriteWidth = sprite_get_width(spr_hpbar);

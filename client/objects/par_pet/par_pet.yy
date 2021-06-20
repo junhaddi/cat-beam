@@ -27,7 +27,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "04_Pets",
-    "path": "folders/Objects/200_props/04_Pets.yy",
+    "path": "folders/Objects/200_Props/04_Pets.yy",
   },
   "resourceVersion": "1.0",
   "name": "par_pet",

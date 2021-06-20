@@ -24,8 +24,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "200_props",
-    "path": "folders/Objects/200_props.yy",
+    "name": "200_Props",
+    "path": "folders/Objects/200_Props.yy",
   },
   "resourceVersion": "1.0",
   "name": "par_prop",

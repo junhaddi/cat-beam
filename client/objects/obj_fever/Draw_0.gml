@@ -11,13 +11,15 @@ switch (feverKind) {
 		break;
 }
 
+image_speed = !global.isStop ? global.gameSpeed : 0;
+
 if (!isDead) {
 	var _w = random_range(0.8, 1.2);
 	var _h = random_range(0.8, 1.2);
 	draw_sprite_ext(feverSprite, -1, x, y, _w, _h, 0, c_white, 1);
 
 	// 고양이빔
-	if (beamThickness > 1) {
+	if (beamThickness > 1 && beamRange > 1) {
 		gpu_set_blendmode(bm_add);
 		draw_set_color(beamColor);
 		draw_rectangle(x + beamOffsetX, y + beamOffsetY - beamThickness, x + beamOffsetX + beamRange, y + beamOffsetY + beamThickness, false);

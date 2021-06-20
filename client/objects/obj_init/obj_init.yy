@@ -24,8 +24,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "000_Manager",
-    "path": "folders/Objects/000_Manager.yy",
+    "name": "000_Managers",
+    "path": "folders/Objects/000_Managers.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_init",

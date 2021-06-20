@@ -27,7 +27,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "02_Blocks",
-    "path": "folders/Objects/200_props/02_Blocks.yy",
+    "path": "folders/Objects/200_Props/02_Blocks.yy",
   },
   "resourceVersion": "1.0",
   "name": "par_block",

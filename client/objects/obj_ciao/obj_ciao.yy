@@ -30,7 +30,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "03_Items",
-    "path": "folders/Objects/200_props/03_Items.yy",
+    "path": "folders/Objects/200_Props/03_Items.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_ciao",
