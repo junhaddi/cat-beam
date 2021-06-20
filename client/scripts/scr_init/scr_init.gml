@@ -7,6 +7,11 @@ function scr_init() {
 	#macro GAME_CENTER 640
 	#macro GAME_MIDDLE 360
 
+	enum Platform {
+		PC,
+		Mobile,
+	}
+
 	enum Tag {
 		Player,
 		Enemy,
@@ -16,7 +21,7 @@ function scr_init() {
 		UI,
 	}
 	
-	enum Touch {
+	enum Input {
 		Jump,
 		Beam,
 		Pause,
@@ -42,6 +47,7 @@ function scr_init() {
 		Enemy,
 		Ciao,
 		Items,
+		GameStart,
 	};
 	
 	enum PlayerAlarm {
@@ -631,6 +637,20 @@ function scr_init() {
 	for (var i = 0; i < ds_list_size(global.waves); i++) {
 		ds_list_mark_as_list(global.waves, i);
 	}
+
+	// 게임 기본정보
+	var _platform;
+	switch (os_type) {
+		case os_windows:
+		case os_macosx:
+		case os_linux:
+			_platform = Platform.PC;
+			break;
+		case os_android:
+		case os_ios:
+			_platform = Platform.Mobile;
+	}
+	global.platform = _platform;
 
 	// 게임 기본설정
 	device_mouse_dbclick_enable(false);

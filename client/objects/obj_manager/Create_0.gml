@@ -1,6 +1,7 @@
 // 인게임 정보
 global.gameState = GameState.MainMenu;
-global.isTouchs = [false, false, false];
+global.isInputs = [false, false, false];
+global.isInputsEnabled = [false, false, false];
 
 global.isStop = false;
 global.tutorialIndex = -1;

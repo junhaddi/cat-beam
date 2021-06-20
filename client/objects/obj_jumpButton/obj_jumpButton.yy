@@ -29,8 +29,8 @@
   ],
   "overriddenProperties": [],
   "parent": {
-    "name": "04_InGames",
-    "path": "folders/Objects/300_UI/04_InGames.yy",
+    "name": "cat-beam",
+    "path": "cat-beam.yyp",
   },
   "resourceVersion": "1.0",
   "name": "obj_jumpButton",

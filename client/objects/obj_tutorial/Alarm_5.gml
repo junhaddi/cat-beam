@@ -1,3 +1,4 @@
 /// @description 아이템 설명
 
-global.isStop = true;
+isItems = true;
+alarm[++global.tutorialIndex] = GAME_FPS * 10;

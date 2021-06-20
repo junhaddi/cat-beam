@@ -4,8 +4,8 @@ function scr_player() {
 	var key_beam = false; 
 	
 	if (!isDead) {
-		key_jump = keyboard_check_pressed(vk_up) || global.isTouchs[Touch.Jump];
-		key_beam = keyboard_check(vk_down) || global.isTouchs[Touch.Beam];
+		key_jump = global.isInputs[Input.Jump];
+		key_beam = global.isInputs[Input.Beam];
 	}
 	
 	// 중력 가속도
@@ -47,11 +47,6 @@ function scr_player() {
 					}
 				}
 			}
-		}
-		
-		// 순간적인 빔 두께 설정
-		if (keyboard_check_pressed(vk_down)) {
-			beamThickness = beamThicknessMax;
 		}
 	
 		// 물리엔진
