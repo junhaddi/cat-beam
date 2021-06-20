@@ -30,13 +30,15 @@ if (instance_exists(par_prop) && global.tutorialIndex <= Tutorial.Ciao) {
 			switch (global.tutorialIndex) {
 				case Tutorial.BlockLow:
 					global.isInputsEnabled[Input.Jump] = true;
+					hintTarget = obj_jumpButton;
 					break;
 				case Tutorial.BlockHigh:
 					global.isInputsEnabled[Input.Jump] = true;
+					hintTarget = obj_jumpButton;
 					break;
 				case Tutorial.Enemy:
-					global.isInputsEnabled[Input.Jump] = true;
 					global.isInputsEnabled[Input.Beam] = true;
+					hintTarget = obj_beamButton;
 					break;
 			}
 			global.isStop = true;
@@ -45,9 +47,12 @@ if (instance_exists(par_prop) && global.tutorialIndex <= Tutorial.Ciao) {
 	}
 } else if (_isStop) {
 	if (global.tutorialIndex < Tutorial.Enemy) {
-		global.isInputsEnabled = [false, false, false];
+		global.isInputsEnabled[Input.Jump] = false;
+		global.isInputsEnabled[Input.Beam] = false;
+	} else {
+		global.isInputsEnabled[Input.Jump] = true;
+		global.isInputsEnabled[Input.Beam] = true;
 	}
-	global.isStop = false;
 	_isStop = false;
 	alarm[++global.tutorialIndex] = GAME_FPS * 6;
 	instance_destroy(obj_textBubble);

@@ -47,7 +47,7 @@ function scr_init() {
 		Enemy,
 		Ciao,
 		Items,
-		GameStart,
+		End,
 	};
 	
 	enum PlayerAlarm {
@@ -56,6 +56,7 @@ function scr_init() {
 
 	// 세이브파일 불러오기
 	global.gameHighScore = 0;
+	global.isTutorialDone = false;
 	global.saveMap = ds_map_create();
 	if (file_exists(SAVE_FILE)) {
 		scr_load(SAVE_FILE);

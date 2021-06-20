@@ -8,14 +8,15 @@ switch (global.gameState) {
 		
 		// 게임시작
 		if (keyboard_check_pressed(vk_anykey) || mouse_check_button_pressed(mb_left)) {
-			// TODO 튜토리얼 정보 값 저장
-			//global.gameState = GameState.PlayerSelect;
-			global.isInputsEnabled = [true, true, true];
-			
-			global.gameState = GameState.Tutorial;
-			global.isInputsEnabled = [false, false, false];
-			instance_create_layer(0, 0, "layer_above", obj_tutorial);
-			scr_setPlayer(0);
+			if (global.isTutorialDone) {
+				global.gameState = GameState.PlayerSelect;
+				global.isInputsEnabled = [true, true, true];
+			} else {
+				global.gameState = GameState.Tutorial;
+				global.isInputsEnabled = [false, false, false];
+				instance_create_layer(0, 0, "layer_above", obj_tutorial);
+				scr_setPlayer(0);
+			}
 		}
 		#endregion
 		break;
@@ -114,7 +115,7 @@ switch (global.gameState) {
 		break;
 	case GameState.GameOver:
 		#region GameOver
-		if (keyboard_check_pressed(ord("R"))) {
+		if (keyboard_check_pressed(vk_anykey) || mouse_check_button_pressed(mb_left)) {
 			global.gameState = GameState.PlayerSelect;
 			global.gameScore = 0;
 			global.stringBallCount = 0;

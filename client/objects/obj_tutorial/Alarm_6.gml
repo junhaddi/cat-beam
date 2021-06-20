@@ -1,6 +1,9 @@
-/// @description 게임시작
+/// @description 튜토리얼 종료
 
 global.gameState = GameState.InGame;
-global.isInputsEnabled = [true, true, true];
+
+global.saveMap[? "tutorialDone"] = true;
+scr_save(SAVE_FILE);
+
 instance_destroy();
 			

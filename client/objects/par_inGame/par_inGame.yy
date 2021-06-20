@@ -30,8 +30,8 @@
   ],
   "overriddenProperties": [],
   "parent": {
-    "name": "04_InGames",
-    "path": "folders/Objects/300_UI/04_InGames.yy",
+    "name": "300_UI",
+    "path": "folders/Objects/300_UI.yy",
   },
   "resourceVersion": "1.0",
   "name": "par_inGame",
