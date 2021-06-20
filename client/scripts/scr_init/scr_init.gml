@@ -38,6 +38,7 @@ function scr_init() {
 	enum ManagerAlarm {
 		Wave,
 		Fever,
+		GameOver,
 	};
 	
 	enum Tutorial {

@@ -1,13 +1,13 @@
 var feverSprite;
 switch (feverKind) {
 	case 0:
-		feverSprite = spr_player1;
+		feverSprite = spr_player1_run;
 		break;
 	case 1:
-		feverSprite = spr_player2;
+		feverSprite = spr_player2_run;
 		break;
 	case 2:
-		feverSprite = spr_player3;
+		feverSprite = spr_player3_run;
 		break;
 }
 
@@ -26,5 +26,5 @@ if (!isDead) {
 	}
 } else {
 	// 피버타임 종료
-	draw_sprite_ext(feverSprite, -1, x, y, 1, -1, 0, c_white, 1);
+	draw_sprite_ext(feverSprite, 0, x, y, 1, -1, 0, c_white, 1);
 }

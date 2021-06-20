@@ -9,7 +9,12 @@ if (global.gameState == GameState.PlayerSelect) {
 		image_xscale = scr_ease(image_xscale, 1);
 		image_yscale = scr_ease(image_yscale, 1);
 	}
+	
+	if (!visible) {
+		isCanTap = false;
+		alarm[0] = tapDelayTime;
+	}
 	visible = true;
-} else {
+} else if (visible) {
 	visible = false;
 }

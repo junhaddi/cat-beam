@@ -11,7 +11,6 @@ function scr_player() {
 	// 중력 가속도
 	if (!global.isStop) {
 		vspd += grav * global.gameSpeed;
-		vspd = clamp(vspd, -vspdMax, vspdMax);
 	}
 	
 	// 점프
@@ -20,6 +19,8 @@ function scr_player() {
 		jumpCount--;
 	}
 	
+	vspd = clamp(vspd, -vspdMax, vspdMax);
+
 	if (!isDead) {
 		// 고양이 비비ㅣㅣ비ㅣ비ㅇ비비이이ㅣㅣㅣㅣㅣㅣ이밈ㅁ!!
 		isBeam = key_beam;

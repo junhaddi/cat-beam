@@ -85,6 +85,9 @@ switch (global.gameState) {
 				// 플레이어 사망
 				global.gameState = GameState.GameOver;
 				
+				isCanGameOver = false;
+				alarm[ManagerAlarm.GameOver] = gameOverDelayTime;
+				
 				// 신기록 달성
 				if (global.gameScore > global.gameHighScore) {
 					global.gameHighScore = global.gameScore;
@@ -115,7 +118,7 @@ switch (global.gameState) {
 		break;
 	case GameState.GameOver:
 		#region GameOver
-		if (keyboard_check_pressed(vk_anykey) || mouse_check_button_pressed(mb_left)) {
+		if (isCanGameOver && (keyboard_check_pressed(vk_anykey) || mouse_check_button_pressed(mb_left))) {
 			global.gameState = GameState.PlayerSelect;
 			global.gameScore = 0;
 			global.stringBallCount = 0;
@@ -148,6 +151,11 @@ if (keyboard_check_pressed(vk_f5)) {
 
 if (keyboard_check_pressed(vk_f6)) {
 	global.platform = global.platform == Platform.PC ? Platform.Mobile : Platform.PC;
+}
+
+if (keyboard_check_pressed(vk_f7)) {
+	global.saveMap[? "tutorialDone"] = false;
+	scr_save(SAVE_FILE);
 }
 
 //if (keyboard_check_pressed(vk_left)) {

@@ -14,8 +14,8 @@ switch (petKind) {
 if (!isDead) {
 	var _w = random_range(0.8, 1.2) * isRescue ? 1 : -1;
 	var _h = random_range(0.8, 1.2);
-	var _a = isRescue ? (obj_player.isDamaged ? 0.5 : 1) : 1; 
-	draw_sprite_ext(playerSprite, -1, x, y, _w, _h, 0, c_white, _a);
+	var alpha = isRescue ? (obj_player.isDamaged ? 0.5 : 1) : 1; 
+	draw_sprite_ext(playerSprite, -1, x, y, _w, _h, 0, c_white, alpha);
 
 	// 고양이빔
 	if (beamThickness > 1) {

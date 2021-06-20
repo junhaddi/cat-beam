@@ -1,6 +1,7 @@
 tag = Tag.Player;
 
 isDead = false;
+state = "run";
 
 // 이동
 vspdMax = 18;
