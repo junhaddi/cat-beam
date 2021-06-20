@@ -11,6 +11,6 @@ function scr_setPlayer(kind) {
 	with (obj_player) {
 		isDead = false;
 		isBeamStraight = global.playersStatus[| global.playerKind][? "beamStraight"];
-		path_start(path_playerStart, 24, path_action_stop, true);
+		path_start(path_playerStart, global.gameSpeed * 24, path_action_stop, true);
 	}
 }

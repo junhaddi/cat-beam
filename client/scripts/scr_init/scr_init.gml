@@ -662,7 +662,7 @@ function scr_init() {
 	draw_set_valign(fa_top);
 	
 	// 배경음악 재생
-	//audio_play_sound(bgm_game1, 10, true);
+	audio_play_sound(bgm_game1, 10, true);
 	
 	room_goto_next();
 }

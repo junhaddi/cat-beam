@@ -1,6 +1,6 @@
 {
-  "compression": 0,
-  "volume": 0.35,
+  "compression": 1,
+  "volume": 1.0,
   "preload": false,
   "bitRate": 128,
   "sampleRate": 44100,
@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "bgm_game1.mp3",
-  "duration": 352.266235,
+  "duration": 152.0115,
   "parent": {
     "name": "000_BGM",
     "path": "folders/Sounds/000_BGM.yy",
